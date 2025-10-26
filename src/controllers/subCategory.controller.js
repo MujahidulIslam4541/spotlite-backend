@@ -12,7 +12,7 @@ const subCategory = catchAsync(async (req, res) => {
   const category = await subCategoryService(categoryData);
   res.status(httpStatus.CREATED).json(
     response({
-      message: "category Created",
+      message: "Subcategory Created",
       status: "OK",
       statusCode: httpStatus.CREATED,
       data: category,

@@ -1,7 +1,10 @@
 const httpStatus = require("http-status");
 const catchAsync = require("../utils/catchAsync");
 const response = require("../config/response");
-const { categoryService } = require("../services/category.service");
+const { categoryService, getAllCategoriesWithData } = require("../services/category.service");
+const Service = require("../models/service.model");
+const SubCategory = require("../models/subCategory.model");
+const Category = require("../models/category.model");
 
 const category = catchAsync(async (req, res) => {
   const user = req.user.id;
@@ -17,5 +20,21 @@ const category = catchAsync(async (req, res) => {
   );
 });
 
+const getCategoryController = catchAsync(async (req, res) => {
+ const categories = await getAllCategoriesWithData();
 
-module.exports={category}
+  res.status(httpStatus.OK).json(
+    response({
+      message: "All Categories with SubCategories and Services fetched successfully",
+      status: "OK",
+      statusCode: httpStatus.OK,
+      data: categories.map((cat) => ({
+        attributes: cat,
+      })),
+    })
+  );
+});
+
+
+
+module.exports={category,getCategoryController}
