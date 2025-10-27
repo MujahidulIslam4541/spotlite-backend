@@ -1,7 +1,8 @@
 const httpStatus = require("http-status");
 const catchAsync = require("../utils/catchAsync");
 const response = require("../config/response");
-const { categoryService, getAllCategoriesWithData } = require("../services/category.service");
+const { categoryService, getAllCategoriesWithData, categoryget } = require("../services/category.service");
+const pick = require("../utils/pick");
 
 
 const category = catchAsync(async (req, res) => {
@@ -16,6 +17,7 @@ const category = catchAsync(async (req, res) => {
   //     })
   //   );
   // }
+  
   const categoryData = { ...req.body, user };
   const category = await categoryService(categoryData);
   res.status(httpStatus.CREATED).json(
@@ -26,6 +28,13 @@ const category = catchAsync(async (req, res) => {
       data: category,
     })
   );
+});
+
+const getCategories = catchAsync(async (req, res) => {
+  const filter = pick(req.query, ["name", "type", "status"]); 
+  const options = pick(req.query, ["sortBy", "limit", "page"]);
+  const result = await categoryget(filter, options);
+  res.send(result);
 });
 
 const getCategoryController = catchAsync(async (req, res) => {
@@ -43,4 +52,4 @@ const getCategoryController = catchAsync(async (req, res) => {
   );
 });
 
-module.exports = { category, getCategoryController };
+module.exports = { category, getCategoryController,getCategories };
