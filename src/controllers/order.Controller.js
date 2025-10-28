@@ -2,7 +2,7 @@ const httpStatus = require("http-status");
 const catchAsync = require("../utils/catchAsync");
 const response = require("../config/response");
 const Service = require("../models/service.model");
-const { orderService } = require("../services/order.service");
+const { orderService, getOrdersByUser } = require("../services/order.service");
 
 const orderCreate = catchAsync(async (req, res) => {
   const { quantity = 1, addLink, addComment } = req.body;
@@ -52,4 +52,21 @@ const orderCreate = catchAsync(async (req, res) => {
   );
 });
 
-module.exports = { orderCreate };
+
+const getMyOrders = catchAsync(async (req, res) => {
+  const userId = req.user.id;
+  const { page, limit } = req.query; 
+
+  const orders = await getOrdersByUser(userId, { page, limit });
+
+  res.status(httpStatus.OK).json(
+    response({
+      message: "User orders fetched successfully",
+      status: "SUCCESS",
+      statusCode: httpStatus.OK,
+      data: orders,
+    })
+  );
+});
+
+module.exports = { orderCreate ,getMyOrders};
