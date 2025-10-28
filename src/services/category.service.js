@@ -35,17 +35,17 @@ const categoryGet = async (filter = {}, options = {}) => {
 
 
 const getAllCategoriesWithData = async () => {
-  const categories = await Category.find()
+  const categories = await Category.find().select('name')
     .populate({ path: "createdBy", select: "fullName email" })
     .lean();
 
   for (const category of categories) {
-    const subCategories = await SubCategory.find({ categoryId: category._id })
+    const subCategories = await SubCategory.find({ categoryId: category._id }).select('name')
       .populate({ path: "createdBy", select: "fullName email" })
       .lean();
 
     for (const subCategory of subCategories) {
-      const services = await Service.find({ subCategoryId: subCategory._id })
+      const services = await Service.find({ subCategoryId: subCategory._id }).select('name pricePerUnit')
         .populate({ path: "createdBy", select: "fullName email" })
         .lean();
 
