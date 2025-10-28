@@ -10,7 +10,7 @@ const createUser = async (userBody) => {
   }
   const oneTimeCode = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
 
-  if (userBody.role === "user" || userBody.role === "admin") {
+  if (userBody.role === "client" || userBody.role === "admin"|| userBody.role === "employ") {
 
     sendEmailVerification(userBody.email, oneTimeCode);
   }
