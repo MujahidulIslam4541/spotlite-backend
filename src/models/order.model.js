@@ -12,6 +12,12 @@ const orderSchema = new mongoose.Schema(
       ref: "Service",
       required: true,
     },
+    orderName: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+
     quantity: {
       type: Number,
       default: 1,
