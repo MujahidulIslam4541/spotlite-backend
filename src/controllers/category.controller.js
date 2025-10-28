@@ -1,24 +1,25 @@
 const httpStatus = require("http-status");
 const catchAsync = require("../utils/catchAsync");
 const response = require("../config/response");
-const { categoryService, getAllCategoriesWithData, categoryget } = require("../services/category.service");
+const { categoryService, getAllCategoriesWithData
+  , categoryGet } = require("../services/category.service");
 const pick = require("../utils/pick");
 
 
 const category = catchAsync(async (req, res) => {
   const user = req.user.id;
 
-  // if (user.role !== "admin") {
-  //   return res.status(httpStatus.UNAUTHORIZED).json(
-  //     response({
-  //       message: "UnAuthorized access",
-  //       status: "FAIL",
-  //       statusCode: httpStatus.UNAUTHORIZED,
-  //     })
-  //   );
-  // }
+  if (req.user.role !== "admin") {
+    return res.status(httpStatus.UNAUTHORIZED).json(
+      response({
+        message: "UnAuthorized access",
+        status: "FAIL",
+        statusCode: httpStatus.UNAUTHORIZED,
+      })
+    );
+  }
   
-  const categoryData = { ...req.body, user };
+  const categoryData = { ...req.body, user};
   const category = await categoryService(categoryData);
   res.status(httpStatus.CREATED).json(
     response({
@@ -33,7 +34,7 @@ const category = catchAsync(async (req, res) => {
 const getCategories = catchAsync(async (req, res) => {
   const filter = pick(req.query, ["name", "type", "status"]); 
   const options = pick(req.query, ["sortBy", "limit", "page"]);
-  const result = await categoryget(filter, options);
+  const result = await categoryGet(filter, options);
   res.send(result);
 });
 

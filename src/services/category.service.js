@@ -7,7 +7,7 @@ const categoryService = async (data) => {
   return category;
 };
 
-const categoryget = async (filter = {}, options = {}) => {
+const categoryGet = async (filter = {}, options = {}) => {
   const { limit = 10, page = 1 } = options;
 
   const count = await Category.countDocuments(filter);
@@ -58,4 +58,4 @@ const getAllCategoriesWithData = async () => {
   return categories;
 };
 
-module.exports = { categoryService, getAllCategoriesWithData,categoryget };
+module.exports = { categoryService, getAllCategoriesWithData,categoryGet };
