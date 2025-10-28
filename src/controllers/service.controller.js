@@ -3,6 +3,7 @@ const catchAsync = require("../utils/catchAsync");
 const response = require("../config/response");
 const { serviceService } = require("../services/service.service");
 const SubCategory = require("../models/subCategory.model");
+const Service = require("../models/service.model");
 
 const serviceController = catchAsync(async (req, res) => {
   const subCategoryId = req.params.id;
@@ -10,17 +11,32 @@ const serviceController = catchAsync(async (req, res) => {
   const user = req.user.id;
 
   const checkSubCategory = await SubCategory.findById(subCategoryId);
-    if (!checkSubCategory) {
-      return res.status(httpStatus.BAD_REQUEST).json(
-        response({
-          message: "Invalid SubCategory ID",
-          status: "FAIL",
-          statusCode: httpStatus.BAD_REQUEST,
-        })
-      );
-    }
+  if (!checkSubCategory) {
+    return res.status(httpStatus.BAD_REQUEST).json(
+      response({
+        message: "Invalid SubCategory ID",
+        status: "FAIL",
+        statusCode: httpStatus.BAD_REQUEST,
+      })
+    );
+  }
 
-  const serviceData = { ...data, checkSubCategory, user };
+  const existingService = await Service.findOne({
+    name: data.name.trim().toLowerCase(),
+    subCategoryId: checkSubCategory._id,
+  });
+
+  if (existingService) {
+    return res.status(httpStatus.CONFLICT).json(
+      response({
+        message: `service '${data.name}' already exists under this category`,
+        status: "FAIL",
+        statusCode: httpStatus.CONFLICT,
+      })
+    );
+  }
+
+  const serviceData = { ...data, subCategoryId: checkSubCategory._id, user };
   const service = await serviceService(serviceData);
   res.status(httpStatus.CREATED).json(
     response({
