@@ -7,8 +7,17 @@ const { orderService } = require("../services/order.service");
 const orderCreate = catchAsync(async (req, res) => {
   const { quantity = 1, addLink, addComment } = req.body;
   const userId = req.user.id;
-  const serviceId=req.params.id
+  const serviceId = req.params.id;
 
+  if (req.user.role !== "client") {
+    return res.status(httpStatus.FORBIDDEN).json(
+      response({
+        message: "Access denied: only clients can place orders",
+        status: "FAIL",
+        statusCode: httpStatus.FORBIDDEN,
+      })
+    );
+  }
   const service = await Service.findById(serviceId);
   if (!service) {
     return res.status(httpStatus.NOT_FOUND).json(
@@ -29,7 +38,7 @@ const orderCreate = catchAsync(async (req, res) => {
     addComment,
     totalPrice,
     quantity,
-    orderName:service.name
+    orderName: service.name,
   };
 
   const order = await orderService(createOrder);
@@ -43,4 +52,4 @@ const orderCreate = catchAsync(async (req, res) => {
   );
 });
 
-module.exports={orderCreate}
+module.exports = { orderCreate };

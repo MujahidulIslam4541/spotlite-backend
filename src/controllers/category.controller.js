@@ -12,7 +12,7 @@ const category = catchAsync(async (req, res) => {
   if (req.user.role !== "admin") {
     return res.status(httpStatus.UNAUTHORIZED).json(
       response({
-        message: "UnAuthorized access",
+        message: "Access denied: only admins can perform this action",
         status: "FAIL",
         statusCode: httpStatus.UNAUTHORIZED,
       })

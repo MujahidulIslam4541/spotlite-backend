@@ -5,5 +5,5 @@ const { orderCreate } = require("../../controllers/order.Controller");
 
 
 const router = express.Router();
-router.route("/order/:id").post(auth(),orderCreate);
+router.route("/order/:id").post(auth('client'),orderCreate);
 module.exports = router;
