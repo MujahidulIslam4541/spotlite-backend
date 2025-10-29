@@ -1,7 +1,7 @@
 const httpStatus = require("http-status");
 const catchAsync = require("../utils/catchAsync");
 const response = require("../config/response");
-const { categoryService, getAllCategoriesWithData,GetAllCategory } = require("../services/category.service");
+const { categoryService, getAllCategoriesWithData,GetAllCategory, getCategoryByIdWithData } = require("../services/category.service");
 const pick = require("../utils/pick");
 
 
@@ -57,4 +57,14 @@ const getCategoryController = catchAsync(async (req, res) => {
   );
 });
 
-module.exports = { category, getCategoryController,getCategory };
+const getCategoryById = catchAsync(async (req, res) => {
+  const { id } = req.params;
+  const category = await getCategoryByIdWithData(id);
+  res.status(200).json({
+    message: "Category fetched successfully",
+    data: category,
+  });
+});
+
+
+module.exports = { category, getCategoryController,getCategory,getCategoryById };
