@@ -1843,7 +1843,12 @@
 							]
 						}
 					]
-				},
+				}
+			]
+		},
+		{
+			"name": "taskCreate",
+			"item": [
 				{
 					"name": "category",
 					"request": {
@@ -1965,6 +1970,253 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"code\": 201,\n    \"message\": \"category Created\",\n    \"data\": {\n        \"attributes\": {\n            \"name\": \"video\",\n            \"_id\": \"68fe64cb1b85a47a2afa0577\",\n            \"createdAt\": \"2025-10-26T18:13:31.982Z\",\n            \"updatedAt\": \"2025-10-26T18:13:31.982Z\",\n            \"__v\": 0\n        }\n    }\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"video\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/category/category",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"category",
+										"category"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "199"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c7-wsTOYldo25brAe7foq4eRs+xueI\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Oct 2025 16:47:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"message\": \"category Created\",\n    \"data\": {\n        \"attributes\": {\n            \"name\": \"video\",\n            \"_id\": \"6900f3b78b7083108d6e1fd7\",\n            \"createdAt\": \"2025-10-28T16:47:51.315Z\",\n            \"updatedAt\": \"2025-10-28T16:47:51.315Z\",\n            \"__v\": 0\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "subCategory",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"youtube\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/subCategory/subCategory/68fe64cb1b85a47a2afa0577",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"subCategory",
+										"subCategory",
+										"68fe64cb1b85a47a2afa0577"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "68fe2bb2cd4b5c71222d8a81",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "244"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f4-oq/H5X/iFJJmvksYBbVboI+LDyU\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 26 Oct 2025 18:14:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"message\": \"Subcategory Created\",\n    \"data\": {\n        \"attributes\": {\n            \"name\": \"youtube\",\n            \"categoryId\": \"68fe64cb1b85a47a2afa0577\",\n            \"_id\": \"68fe651223d1037abcc25b35\",\n            \"createdAt\": \"2025-10-26T18:14:42.754Z\",\n            \"updatedAt\": \"2025-10-26T18:14:42.754Z\",\n            \"__v\": 0\n        }\n    }\n}"
 						}
 					]
 				},
@@ -2092,7 +2344,12 @@
 							"body": "{\n    \"code\": 201,\n    \"message\": \"service Created\",\n    \"data\": {\n        \"attributes\": {\n            \"name\": \"per comments\",\n            \"subCategoryId\": \"68fe651223d1037abcc25b35\",\n            \"pricePerUnit\": 2,\n            \"_id\": \"68fe656d23d1037abcc25b38\",\n            \"createdAt\": \"2025-10-26T18:16:13.578Z\",\n            \"updatedAt\": \"2025-10-26T18:16:13.578Z\",\n            \"__v\": 0\n        }\n    }\n}"
 						}
 					]
-				},
+				}
+			]
+		},
+		{
+			"name": "homePage",
+			"item": [
 				{
 					"name": "categories",
 					"request": {
@@ -2209,140 +2466,377 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"code\": 200,\n    \"message\": \"All Categories with SubCategories and Services fetched successfully\",\n    \"data\": {\n        \"attributes\": [\n            {\n                \"attributes\": {\n                    \"_id\": \"68fe2bb2cd4b5c71222d8a81\",\n                    \"name\": \"social midea\",\n                    \"createdAt\": \"2025-10-26T14:09:54.427Z\",\n                    \"updatedAt\": \"2025-10-26T14:09:54.427Z\",\n                    \"__v\": 0,\n                    \"subCategories\": [\n                        {\n                            \"attributes\": {\n                                \"_id\": \"68fe3082e28668b276f2366e\",\n                                \"name\": \"facebook\",\n                                \"categoryId\": \"68fe2bb2cd4b5c71222d8a81\",\n                                \"createdAt\": \"2025-10-26T14:30:26.897Z\",\n                                \"updatedAt\": \"2025-10-26T14:30:26.897Z\",\n                                \"__v\": 0,\n                                \"services\": [\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"68fe551f9cc9b79b9d8e6973\",\n                                            \"name\": \"per like\",\n                                            \"subCategoryId\": \"68fe3082e28668b276f2366e\",\n                                            \"pricePerUnit\": 1,\n                                            \"createdAt\": \"2025-10-26T17:06:39.090Z\",\n                                            \"updatedAt\": \"2025-10-26T17:06:39.090Z\",\n                                            \"__v\": 0\n                                        }\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            },\n            {\n                \"attributes\": {\n                    \"_id\": \"68fe64cb1b85a47a2afa0577\",\n                    \"name\": \"video\",\n                    \"createdAt\": \"2025-10-26T18:13:31.982Z\",\n                    \"updatedAt\": \"2025-10-26T18:13:31.982Z\",\n                    \"__v\": 0,\n                    \"subCategories\": [\n                        {\n                            \"attributes\": {\n                                \"_id\": \"68fe651223d1037abcc25b35\",\n                                \"name\": \"youtube\",\n                                \"categoryId\": \"68fe64cb1b85a47a2afa0577\",\n                                \"createdAt\": \"2025-10-26T18:14:42.754Z\",\n                                \"updatedAt\": \"2025-10-26T18:14:42.754Z\",\n                                \"__v\": 0,\n                                \"services\": [\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"68fe656d23d1037abcc25b38\",\n                                            \"name\": \"per comments\",\n                                            \"subCategoryId\": \"68fe651223d1037abcc25b35\",\n                                            \"pricePerUnit\": 2,\n                                            \"createdAt\": \"2025-10-26T18:16:13.578Z\",\n                                            \"updatedAt\": \"2025-10-26T18:16:13.578Z\",\n                                            \"__v\": 0\n                                        }\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/category/categories",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"category",
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"792-KZxteHMjn0acRl6CtEaHRS6hAxI\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Oct 2025 16:59:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"All Categories with SubCategories and Services fetched successfully\",\n    \"data\": {\n        \"attributes\": [\n            {\n                \"attributes\": {\n                    \"_id\": \"68fe2bb2cd4b5c71222d8a81\",\n                    \"name\": \"social midea\",\n                    \"subCategories\": []\n                }\n            },\n            {\n                \"attributes\": {\n                    \"_id\": \"68fe64cb1b85a47a2afa0577\",\n                    \"name\": \"video\",\n                    \"subCategories\": []\n                }\n            },\n            {\n                \"attributes\": {\n                    \"_id\": \"68fe6797f87d5675dc22896d\",\n                    \"name\": \"social midea\",\n                    \"subCategories\": []\n                }\n            },\n            {\n                \"attributes\": {\n                    \"_id\": \"68fe67b6f2394566fad23b2a\",\n                    \"name\": \"social midea\",\n                    \"subCategories\": []\n                }\n            },\n            {\n                \"attributes\": {\n                    \"_id\": \"68fe68e77cbdfa535d063282\",\n                    \"name\": \"social midea\",\n                    \"subCategories\": []\n                }\n            },\n            {\n                \"attributes\": {\n                    \"_id\": \"6900b7eedc7f570ae2dbf5e0\",\n                    \"name\": \"video\",\n                    \"subCategories\": [\n                        {\n                            \"attributes\": {\n                                \"_id\": \"6900bd1277ee6e7435b9a8a8\",\n                                \"name\": \"corporate\",\n                                \"services\": [\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900bf682fc7611cf5abb654\",\n                                            \"name\": \"per comment\",\n                                            \"pricePerUnit\": 2\n                                        }\n                                    },\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900bfca8078dfbeb20d1c79\",\n                                            \"name\": \"per comment\",\n                                            \"pricePerUnit\": 2\n                                        }\n                                    },\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900bfcd8078dfbeb20d1c7e\",\n                                            \"name\": \"per comment\",\n                                            \"pricePerUnit\": 2\n                                        }\n                                    },\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900bfd58078dfbeb20d1c83\",\n                                            \"name\": \"per comment\",\n                                            \"pricePerUnit\": 2\n                                        }\n                                    },\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900c07900a68891e4fdc4d4\",\n                                            \"name\": \"per comment\",\n                                            \"pricePerUnit\": 2\n                                        }\n                                    },\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900c07d00a68891e4fdc4d9\",\n                                            \"name\": \"per comment\",\n                                            \"pricePerUnit\": 2\n                                        }\n                                    },\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900c1280e7ab6567b789a7b\",\n                                            \"name\": \"per comment\",\n                                            \"pricePerUnit\": 2\n                                        }\n                                    },\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900c12c0e7ab6567b789a80\",\n                                            \"name\": \"per comment\",\n                                            \"pricePerUnit\": 2\n                                        }\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            },\n            {\n                \"attributes\": {\n                    \"_id\": \"6900f2facc037e033590cda2\",\n                    \"name\": \"video\",\n                    \"subCategories\": []\n                }\n            },\n            {\n                \"attributes\": {\n                    \"_id\": \"6900f3b78b7083108d6e1fd7\",\n                    \"name\": \"video\",\n                    \"subCategories\": [\n                        {\n                            \"attributes\": {\n                                \"_id\": \"6900f3cb8b7083108d6e1fdc\",\n                                \"name\": \"youtube\",\n                                \"services\": [\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900f3e28b7083108d6e1fe1\",\n                                            \"name\": \"per like\",\n                                            \"pricePerUnit\": 2\n                                        }\n                                    },\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900f3f58b7083108d6e1fe9\",\n                                            \"name\": \"per comment\",\n                                            \"pricePerUnit\": 3\n                                        }\n                                    },\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900f3fd8b7083108d6e1fee\",\n                                            \"name\": \"per view\",\n                                            \"pricePerUnit\": 1\n                                        }\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 						}
 					]
 				}
 			]
 		},
 		{
-			"name": "subCategory",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": [
+			"name": "AllOrders(Only Admin)",
+			"item": [
 				{
-					"name": "success",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"youtube\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/api/v1/subCategory/subCategory/68fe64cb1b85a47a2afa0577",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"subCategory",
-								"subCategory",
-								"68fe64cb1b85a47a2afa0577"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "68fe2bb2cd4b5c71222d8a81",
-									"disabled": true
-								}
-							]
-						}
+					"name": "allOrders",
+					"request": {
+						"method": "GET",
+						"header": []
 					},
-					"status": "Created",
-					"code": 201,
-					"_postman_previewlanguage": null,
-					"header": [
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "order",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
 						{
-							"key": "Content-Security-Policy",
-							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-						},
-						{
-							"key": "Cross-Origin-Opener-Policy",
-							"value": "same-origin"
-						},
-						{
-							"key": "Cross-Origin-Resource-Policy",
-							"value": "same-origin"
-						},
-						{
-							"key": "Origin-Agent-Cluster",
-							"value": "?1"
-						},
-						{
-							"key": "Referrer-Policy",
-							"value": "no-referrer"
-						},
-						{
-							"key": "Strict-Transport-Security",
-							"value": "max-age=15552000; includeSubDomains"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "X-DNS-Prefetch-Control",
-							"value": "off"
-						},
-						{
-							"key": "X-Download-Options",
-							"value": "noopen"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "SAMEORIGIN"
-						},
-						{
-							"key": "X-Permitted-Cross-Domain-Policies",
-							"value": "none"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "0"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "244"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"f4-oq/H5X/iFJJmvksYBbVboI+LDyU\""
-						},
-						{
-							"key": "Vary",
-							"value": "Accept-Encoding"
-						},
-						{
-							"key": "Date",
-							"value": "Sun, 26 Oct 2025 18:14:42 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"quantity\": 5,\r\n  \"addLink\": \"https://www.instagram.com/example_profile\",\r\n  \"addComment\": \"Please increase my followers gradually.\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/order/order/6900f3e28b7083108d6e1fe1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"order",
+										"order",
+										"6900f3e28b7083108d6e1fe1"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "430"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ae-S74p03DTKC8yFy9+QQ2RloX45tQ\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Oct 2025 18:25:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"message\": \"Order created successfully\",\n    \"data\": {\n        \"attributes\": {\n            \"userId\": \"6900e743a7000839eb2def08\",\n            \"serviceId\": \"6900f3e28b7083108d6e1fe1\",\n            \"orderName\": \"per like\",\n            \"quantity\": 5,\n            \"totalPrice\": 10,\n            \"addLink\": \"https://www.instagram.com/example_profile\",\n            \"addComment\": \"Please increase my followers gradually.\",\n            \"_id\": \"69010a7d2f43783ca3b13ebd\",\n            \"createdAt\": \"2025-10-28T18:25:01.127Z\",\n            \"updatedAt\": \"2025-10-28T18:25:01.127Z\",\n            \"__v\": 0\n        }\n    }\n}"
 						}
-					],
-					"cookie": [],
-					"body": "{\n    \"code\": 201,\n    \"message\": \"Subcategory Created\",\n    \"data\": {\n        \"attributes\": {\n            \"name\": \"youtube\",\n            \"categoryId\": \"68fe64cb1b85a47a2afa0577\",\n            \"_id\": \"68fe651223d1037abcc25b35\",\n            \"createdAt\": \"2025-10-26T18:14:42.754Z\",\n            \"updatedAt\": \"2025-10-26T18:14:42.754Z\",\n            \"__v\": 0\n        }\n    }\n}"
+					]
+				},
+				{
+					"name": "myOrder",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/order/orders/me",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"order",
+										"orders",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "498"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f2-Qv8guGZpLVv6uHyWsD756r/lHJk\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Oct 2025 19:28:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"User orders fetched successfully\",\n    \"data\": {\n        \"attributes\": {\n            \"data\": [\n                {\n                    \"_id\": \"690117dd98b92326235d1f11\",\n                    \"userId\": \"69010d50f226a1d1963854f4\",\n                    \"serviceId\": \"6900f3fd8b7083108d6e1fee\",\n                    \"orderName\": \"per view\",\n                    \"quantity\": 2,\n                    \"totalPrice\": 2,\n                    \"addLink\": \"https://www.instagram.com/example_profile\",\n                    \"addComment\": \"Please increase my followers gradually.\",\n                    \"createdAt\": \"2025-10-28T19:22:05.152Z\",\n                    \"updatedAt\": \"2025-10-28T19:22:05.152Z\",\n                    \"__v\": 0\n                }\n            ],\n            \"page\": 1,\n            \"limit\": 10,\n            \"totalPages\": 1,\n            \"totalResults\": 1\n        }\n    }\n}"
+						}
+					]
 				}
 			]
 		}
