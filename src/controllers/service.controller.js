@@ -1,7 +1,7 @@
 const httpStatus = require("http-status");
 const catchAsync = require("../utils/catchAsync");
 const response = require("../config/response");
-const { serviceService } = require("../services/service.service");
+const { serviceService, getService } = require("../services/service.service");
 const SubCategory = require("../models/subCategory.model");
 const Service = require("../models/service.model");
 
@@ -48,4 +48,16 @@ const serviceController = catchAsync(async (req, res) => {
   );
 });
 
-module.exports = { serviceController };
+const getserviceController=catchAsync(async(req,res)=>{
+ const result=await getService()
+  res.status(httpStatus.OK).json(
+    response({
+      message: "all service here",
+      status: "OK",
+      statusCode: httpStatus.OK,
+      data: result,
+    })
+  );
+})
+
+module.exports = { serviceController,getserviceController };
