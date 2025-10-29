@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "86535fea-7035-4e6d-b1c5-bedbe8a7ad87",
+		"_postman_id": "2cc71236-2f08-414a-9517-818f336170cb",
 		"name": "spotlite",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "40183302"
@@ -1853,7 +1853,10 @@
 					"name": "category",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": [
 						{
@@ -1885,7 +1888,7 @@
 							},
 							"status": "Created",
 							"code": 201,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Content-Security-Policy",
@@ -2000,7 +2003,7 @@
 							},
 							"status": "Created",
 							"code": 201,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Content-Security-Policy",
@@ -2092,7 +2095,10 @@
 					"name": "subCategory",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": [
 						{
@@ -2132,7 +2138,7 @@
 							},
 							"status": "Created",
 							"code": 201,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Content-Security-Policy",
@@ -2224,7 +2230,10 @@
 					"name": "service",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": [
 						{
@@ -2257,7 +2266,7 @@
 							},
 							"status": "Created",
 							"code": 201,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Content-Security-Policy",
@@ -2344,6 +2353,351 @@
 							"body": "{\n    \"code\": 201,\n    \"message\": \"service Created\",\n    \"data\": {\n        \"attributes\": {\n            \"name\": \"per comments\",\n            \"subCategoryId\": \"68fe651223d1037abcc25b35\",\n            \"pricePerUnit\": 2,\n            \"_id\": \"68fe656d23d1037abcc25b38\",\n            \"createdAt\": \"2025-10-26T18:16:13.578Z\",\n            \"updatedAt\": \"2025-10-26T18:16:13.578Z\",\n            \"__v\": 0\n        }\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "getCategory",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/category/category",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"category",
+										"category"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "340"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"154-V0Yjf5UDTdIkCbYK0LxjEHkR8PM\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Oct 2025 11:52:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"all category\",\n    \"data\": {\n        \"attributes\": [\n            {\n                \"_id\": \"68ff552cb288385c5898c895\",\n                \"name\": \"social media\",\n                \"createdAt\": \"2025-10-27T11:19:08.506Z\",\n                \"updatedAt\": \"2025-10-27T11:19:08.506Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"6901fe1c49213e006275a4c2\",\n                \"name\": \"video\",\n                \"createdAt\": \"2025-10-29T11:44:28.086Z\",\n                \"updatedAt\": \"2025-10-29T11:44:28.086Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "getSubcategory",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/subCategory/subCategory",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"subCategory",
+										"subCategory"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "424"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a8-8C3EZahxPEusr8+NEPE4qaoGcqk\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Oct 2025 12:00:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"message\": \"Subcategory Created\",\n    \"data\": {\n        \"attributes\": [\n            {\n                \"_id\": \"68ff55e7b288385c5898c899\",\n                \"name\": \"youtube\",\n                \"categoryId\": \"68ff552cb288385c5898c895\",\n                \"createdAt\": \"2025-10-27T11:22:15.560Z\",\n                \"updatedAt\": \"2025-10-27T11:22:15.560Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"6901fe7149213e006275a4c8\",\n                \"name\": \"youtube\",\n                \"categoryId\": \"6901fe1c49213e006275a4c2\",\n                \"createdAt\": \"2025-10-29T11:45:53.630Z\",\n                \"updatedAt\": \"2025-10-29T11:45:53.630Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "getservice",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/service/service",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"service",
+										"service"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "738"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e2-MrQxNu4SizYWwciqd6h2FVuoW6A\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Oct 2025 12:04:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"all service here\",\n    \"data\": {\n        \"attributes\": [\n            {\n                \"_id\": \"68ff586eb288385c5898c89d\",\n                \"name\": \"per comments\",\n                \"pricePerUnit\": 2,\n                \"createdAt\": \"2025-10-27T11:33:02.651Z\",\n                \"updatedAt\": \"2025-10-27T11:33:02.651Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"68ff5d9a127bfb0cac95f51b\",\n                \"name\": \"per like\",\n                \"pricePerUnit\": 1,\n                \"createdAt\": \"2025-10-27T11:55:06.252Z\",\n                \"updatedAt\": \"2025-10-27T11:55:06.252Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"68ff5da4127bfb0cac95f51f\",\n                \"name\": \"per view\",\n                \"pricePerUnit\": 0.5,\n                \"createdAt\": \"2025-10-27T11:55:16.482Z\",\n                \"updatedAt\": \"2025-10-27T11:55:16.482Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"6901feb349213e006275a4cd\",\n                \"name\": \"per like\",\n                \"subCategoryId\": \"6901fe7149213e006275a4c8\",\n                \"pricePerUnit\": 2,\n                \"createdAt\": \"2025-10-29T11:46:59.171Z\",\n                \"updatedAt\": \"2025-10-29T11:46:59.171Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+						}
+					]
 				}
 			]
 		},
@@ -2354,7 +2708,10 @@
 					"name": "categories",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": [
 						{
@@ -2377,7 +2734,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Content-Security-Policy",
@@ -2487,7 +2844,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Content-Security-Policy",
@@ -2578,6 +2935,14 @@
 							"body": "{\n    \"code\": 200,\n    \"message\": \"All Categories with SubCategories and Services fetched successfully\",\n    \"data\": {\n        \"attributes\": [\n            {\n                \"attributes\": {\n                    \"_id\": \"68fe2bb2cd4b5c71222d8a81\",\n                    \"name\": \"social midea\",\n                    \"subCategories\": []\n                }\n            },\n            {\n                \"attributes\": {\n                    \"_id\": \"68fe64cb1b85a47a2afa0577\",\n                    \"name\": \"video\",\n                    \"subCategories\": []\n                }\n            },\n            {\n                \"attributes\": {\n                    \"_id\": \"68fe6797f87d5675dc22896d\",\n                    \"name\": \"social midea\",\n                    \"subCategories\": []\n                }\n            },\n            {\n                \"attributes\": {\n                    \"_id\": \"68fe67b6f2394566fad23b2a\",\n                    \"name\": \"social midea\",\n                    \"subCategories\": []\n                }\n            },\n            {\n                \"attributes\": {\n                    \"_id\": \"68fe68e77cbdfa535d063282\",\n                    \"name\": \"social midea\",\n                    \"subCategories\": []\n                }\n            },\n            {\n                \"attributes\": {\n                    \"_id\": \"6900b7eedc7f570ae2dbf5e0\",\n                    \"name\": \"video\",\n                    \"subCategories\": [\n                        {\n                            \"attributes\": {\n                                \"_id\": \"6900bd1277ee6e7435b9a8a8\",\n                                \"name\": \"corporate\",\n                                \"services\": [\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900bf682fc7611cf5abb654\",\n                                            \"name\": \"per comment\",\n                                            \"pricePerUnit\": 2\n                                        }\n                                    },\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900bfca8078dfbeb20d1c79\",\n                                            \"name\": \"per comment\",\n                                            \"pricePerUnit\": 2\n                                        }\n                                    },\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900bfcd8078dfbeb20d1c7e\",\n                                            \"name\": \"per comment\",\n                                            \"pricePerUnit\": 2\n                                        }\n                                    },\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900bfd58078dfbeb20d1c83\",\n                                            \"name\": \"per comment\",\n                                            \"pricePerUnit\": 2\n                                        }\n                                    },\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900c07900a68891e4fdc4d4\",\n                                            \"name\": \"per comment\",\n                                            \"pricePerUnit\": 2\n                                        }\n                                    },\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900c07d00a68891e4fdc4d9\",\n                                            \"name\": \"per comment\",\n                                            \"pricePerUnit\": 2\n                                        }\n                                    },\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900c1280e7ab6567b789a7b\",\n                                            \"name\": \"per comment\",\n                                            \"pricePerUnit\": 2\n                                        }\n                                    },\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900c12c0e7ab6567b789a80\",\n                                            \"name\": \"per comment\",\n                                            \"pricePerUnit\": 2\n                                        }\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            },\n            {\n                \"attributes\": {\n                    \"_id\": \"6900f2facc037e033590cda2\",\n                    \"name\": \"video\",\n                    \"subCategories\": []\n                }\n            },\n            {\n                \"attributes\": {\n                    \"_id\": \"6900f3b78b7083108d6e1fd7\",\n                    \"name\": \"video\",\n                    \"subCategories\": [\n                        {\n                            \"attributes\": {\n                                \"_id\": \"6900f3cb8b7083108d6e1fdc\",\n                                \"name\": \"youtube\",\n                                \"services\": [\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900f3e28b7083108d6e1fe1\",\n                                            \"name\": \"per like\",\n                                            \"pricePerUnit\": 2\n                                        }\n                                    },\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900f3f58b7083108d6e1fe9\",\n                                            \"name\": \"per comment\",\n                                            \"pricePerUnit\": 3\n                                        }\n                                    },\n                                    {\n                                        \"attributes\": {\n                                            \"_id\": \"6900f3fd8b7083108d6e1fee\",\n                                            \"name\": \"per view\",\n                                            \"pricePerUnit\": 1\n                                        }\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "categorisById",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			]
 		},
@@ -2588,7 +2953,10 @@
 					"name": "allOrders",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				}
@@ -2601,7 +2969,10 @@
 					"name": "order",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": [
 						{
@@ -2634,7 +3005,7 @@
 							},
 							"status": "Created",
 							"code": 201,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Content-Security-Policy",
@@ -2726,7 +3097,10 @@
 					"name": "myOrder",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": [
 						{
@@ -2750,7 +3124,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Content-Security-Policy",
