@@ -1,7 +1,7 @@
 const httpStatus = require("http-status");
 const catchAsync = require("../utils/catchAsync");
 const response = require("../config/response");
-const { subCategoryService } = require("../services/subCategory.service");
+const { subCategoryService, GetSubCategory } = require("../services/subCategory.service");
 const Category = require("../models/category.model");
 const SubCategory = require("../models/subCategory.model");
 
@@ -22,7 +22,7 @@ const subCategory = catchAsync(async (req, res) => {
     );
   }
 
- 
+
   const existingSubCategory = await SubCategory.findOne({
     name: data.name.trim().toLowerCase(),
     categoryId: categoryId,
@@ -50,4 +50,17 @@ const subCategory = catchAsync(async (req, res) => {
   );
 });
 
-module.exports = { subCategory };
+const GetSubCategoryController = catchAsync(async (req, res) => {
+  const result = await GetSubCategory()
+  res.status(httpStatus.CREATED).json(
+    response({
+      message: "Subcategory Created",
+      status: "OK",
+      statusCode: httpStatus.CREATED,
+      data: result,
+    })
+  );
+
+})
+
+module.exports = { subCategory ,GetSubCategoryController};
