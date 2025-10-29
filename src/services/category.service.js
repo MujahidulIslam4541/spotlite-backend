@@ -7,30 +7,11 @@ const categoryService = async (data) => {
   return category;
 };
 
-const categoryGet = async (filter = {}, options = {}) => {
-  const { limit = 10, page = 1 } = options;
-
-  const count = await Category.countDocuments(filter);
-  const totalPages = Math.ceil(count / limit);
-  const skip = (page - 1) * limit;
-
-  const categories = await Category.find(filter)
-    .skip(skip)
-    .limit(limit)
-    .sort({ createdAt: -1 }); // optional: sort newest first
-
-  if (!categories || !categories.length) {
-    throw new ApiError(httpStatus.NOT_FOUND, "No categories found");
-  }
-
-  return {
-    data: categories,
-    page: parseInt(page),
-    limit: parseInt(limit),
-    totalPages,
-    totalResults: count,
-  };
+const GetAllCategory = async (data) => {
+  const category = await Category.find(data)
+  return category;
 };
+
 
 
 
@@ -58,4 +39,4 @@ const getAllCategoriesWithData = async () => {
   return categories;
 };
 
-module.exports = { categoryService, getAllCategoriesWithData,categoryGet };
+module.exports = { categoryService, getAllCategoriesWithData, GetAllCategory };
