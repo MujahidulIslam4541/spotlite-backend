@@ -35,4 +35,9 @@ const getOrdersByUser = async (userId, options = {}) => {
   };
 };
 
-module.exports = { orderService,getOrdersByUser };
+const allOrders=async(data)=>{
+  const orders=await Order.find(data)
+  return orders;
+}
+
+module.exports = { orderService,getOrdersByUser ,allOrders};

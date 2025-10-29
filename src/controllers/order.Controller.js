@@ -2,7 +2,7 @@ const httpStatus = require("http-status");
 const catchAsync = require("../utils/catchAsync");
 const response = require("../config/response");
 const Service = require("../models/service.model");
-const { orderService, getOrdersByUser } = require("../services/order.service");
+const { orderService, getOrdersByUser, allOrders } = require("../services/order.service");
 
 const orderCreate = catchAsync(async (req, res) => {
   const { quantity = 1, addLink, addComment } = req.body;
@@ -52,10 +52,9 @@ const orderCreate = catchAsync(async (req, res) => {
   );
 });
 
-
 const getMyOrders = catchAsync(async (req, res) => {
   const userId = req.user.id;
-  const { page, limit } = req.query; 
+  const { page, limit } = req.query;
 
   const orders = await getOrdersByUser(userId, { page, limit });
 
@@ -69,4 +68,26 @@ const getMyOrders = catchAsync(async (req, res) => {
   );
 });
 
-module.exports = { orderCreate ,getMyOrders};
+const allOrdersController = catchAsync(async (req, res) => {
+  if (req.user.role !== "admin") {
+    return res.status(httpStatus.UNAUTHORIZED).json(
+      response({
+        message: "Access denied: only admins can perform this action",
+        status: "FAIL",
+        statusCode: httpStatus.UNAUTHORIZED,
+      })
+    );
+  }
+
+  const result = await allOrders();
+  res.status(httpStatus.OK).json(
+    response({
+      message: "All orders fetched successfully",
+      status: "SUCCESS",
+      statusCode: httpStatus.OK,
+      data: result,
+    })
+  );
+});
+
+module.exports = { orderCreate, getMyOrders ,allOrdersController};
