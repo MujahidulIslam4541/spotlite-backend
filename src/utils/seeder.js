@@ -8,7 +8,7 @@ const usersData = [
     email: "super.admin@gmail.com",
     phoneNumber: "01735566789",
     password: "$2a$08$cUQ3uMdbQjlyDF/dgn5mNuEt9fLJZqq8TaT9aKabrFuG5wND3/mPO", // password: 1qazxsw2
-    role: "superAdmin",
+    role: "employ",
     isEmailVerified: true,
   },
   {
@@ -25,7 +25,7 @@ const usersData = [
     phoneNumber: "01734456873",
     dateOfBirth: "2000-06-22",
     password: "$2a$08$cUQ3uMdbQjlyDF/dgn5mNuEt9fLJZqq8TaT9aKabrFuG5wND3/mPO",
-    role: "user",
+    role: "clint",
     isEmailVerified: true,
   },
 ];
