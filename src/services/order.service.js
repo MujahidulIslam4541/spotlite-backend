@@ -16,15 +16,13 @@ const getOrdersByUser = async (userId, options = {}) => {
   const orders = await Order.find(filter)
     // .populate({
     //   path: "serviceId",
-    //   // select: "name pricePerUnit subCategoryId totalPrice", 
+    //   // select: "name pricePerUnit subCategoryId totalPrice",
     //   // populate: { path: "subCategoryId", select: "name categoryId" },
     // })
     .sort({ createdAt: -1 })
     .skip(skip)
     .limit(limit)
     .lean();
-
- 
 
   return {
     data: orders,
@@ -35,9 +33,26 @@ const getOrdersByUser = async (userId, options = {}) => {
   };
 };
 
-const allOrders=async(data)=>{
-  const orders=await Order.find(data)
-  return orders;
-}
+const allOrders = async (filter = {}, options = {}) => {
+  const { limit = 10, page = 1 } = options;
 
-module.exports = { orderService,getOrdersByUser ,allOrders};
+  const count = await Order.countDocuments(filter);
+  const totalPages = Math.ceil(count / limit);
+  const skip = (page - 1) * limit;
+
+  const orders = await Order.find(filter)
+    .sort({ createdAt: -1 })
+    .skip(skip)
+    .limit(limit)
+    .lean();
+
+  return {
+    data: orders,
+    page: parseInt(page),
+    limit: parseInt(limit),
+    totalPages,
+    totalResults: count,
+  };
+};
+
+module.exports = { orderService, getOrdersByUser, allOrders };

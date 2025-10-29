@@ -69,6 +69,7 @@ const getMyOrders = catchAsync(async (req, res) => {
 });
 
 const allOrdersController = catchAsync(async (req, res) => {
+  const { page, limit } = req.query;
   if (req.user.role !== "admin") {
     return res.status(httpStatus.UNAUTHORIZED).json(
       response({
@@ -79,7 +80,7 @@ const allOrdersController = catchAsync(async (req, res) => {
     );
   }
 
-  const result = await allOrders();
+  const result = await allOrders({ page, limit });
   res.status(httpStatus.OK).json(
     response({
       message: "All orders fetched successfully",
@@ -90,4 +91,4 @@ const allOrdersController = catchAsync(async (req, res) => {
   );
 });
 
-module.exports = { orderCreate, getMyOrders ,allOrdersController};
+module.exports = { orderCreate, getMyOrders, allOrdersController };
