@@ -18,8 +18,12 @@ const createUser = catchAsync(async (req, res) => {
   );
 });
 
+
+// get all employ
 const getUsers = catchAsync(async (req, res) => {
-  const result = await userService.queryUsers();
+  const { role } = req.query; 
+  const filter = role ? { role } : {}; 
+  const result = await userService.queryUsers(filter);
   res.status(httpStatus.OK).json(
     response({
       message: "All Users",
