@@ -2,7 +2,7 @@ const httpStatus = require("http-status");
 const catchAsync = require("../utils/catchAsync");
 const response = require("../config/response");
 const Service = require("../models/service.model");
-const { orderService, getOrdersByUser, allOrders } = require("../services/order.service");
+const { orderService, getOrdersByUser, allOrders, Orders } = require("../services/order.service");
 
 const orderCreate = catchAsync(async (req, res) => {
   const { quantity = 1, addLink, addComment } = req.body;
@@ -68,6 +68,8 @@ const getMyOrders = catchAsync(async (req, res) => {
   );
 });
 
+
+// all orders only admin
 const allOrdersController = catchAsync(async (req, res) => {
   const { page, limit } = req.query;
   if (req.user.role !== "admin") {
@@ -91,6 +93,28 @@ const allOrdersController = catchAsync(async (req, res) => {
   );
 });
 
-// all  orders only employ
+//   orders only employ and her feed
+const OrdersController = catchAsync(async (req, res) => {
+  const { page, limit } = req.query;
+  if (req.user.role !== "employ") {
+    return res.status(httpStatus.UNAUTHORIZED).json(
+      response({
+        message: "Access denied: only employ can perform this action",
+        status: "FAIL",
+        statusCode: httpStatus.UNAUTHORIZED,
+      })
+    );
+  }
 
-module.exports = { orderCreate, getMyOrders, allOrdersController };
+  const result = await Orders({ page, limit });
+  res.status(httpStatus.OK).json(
+    response({
+      message: "All orders fetched successfully",
+      status: "SUCCESS",
+      statusCode: httpStatus.OK,
+      data: result,
+    })
+  );
+});
+
+module.exports = { orderCreate, getMyOrders, allOrdersController ,OrdersController};

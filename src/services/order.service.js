@@ -40,11 +40,7 @@ const allOrders = async (filter = {}, options = {}) => {
   const totalPages = Math.ceil(count / limit);
   const skip = (page - 1) * limit;
 
-  const orders = await Order.find(filter)
-    .sort({ createdAt: -1 })
-    .skip(skip)
-    .limit(limit)
-    .lean();
+  const orders = await Order.find(filter).sort({ createdAt: -1 }).skip(skip).limit(limit).lean();
 
   return {
     data: orders,
@@ -55,4 +51,41 @@ const allOrders = async (filter = {}, options = {}) => {
   };
 };
 
-module.exports = { orderService, getOrdersByUser, allOrders };
+// orders for employs
+const Orders = async (filter = {}, options = {}) => {
+  const { limit = 5, page = 1 } = options;
+
+  const count = await Order.countDocuments(filter);
+  const totalPages = Math.ceil(count / limit);
+  const skip = (page - 1) * limit;
+
+  const orders = await Order.find(filter)
+    .populate({
+      path: "serviceId",
+      populate: { path: "subCategoryId", select: "name  -_id", populate: { path: "categoryId", select: "name -_id" } },
+    })
+    .sort({ createdAt: -1 })
+    .skip(skip)
+    .limit(limit)
+    .lean();
+
+  const filteredOrders = orders.map((order) => ({
+    categoryName: order.serviceId?.subCategoryId?.categoryId?.name,
+    subCategoryName: order.serviceId?.subCategoryId?.name,
+    orderName: order.orderName,
+    quantity: order.quantity,
+    addLink: order.addLink,
+    addComment: order.addComment,
+    createdAt: order.createdAt,
+  }));
+
+  return {
+    data: filteredOrders,
+    page: parseInt(page),
+    limit: parseInt(limit),
+    totalPages,
+    totalResults: count,
+  };
+};
+
+module.exports = { orderService, getOrdersByUser, allOrders, Orders };

@@ -17,6 +17,10 @@ const orderSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
+    isDelete: {
+      type: Boolean,
+      default:false
+    },
 
     quantity: {
       type: Number,
