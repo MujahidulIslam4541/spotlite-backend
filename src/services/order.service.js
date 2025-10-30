@@ -53,13 +53,14 @@ const allOrders = async (filter = {}, options = {}) => {
 
 // orders for employs
 const Orders = async (filter = {}, options = {}) => {
-  const { limit = 5, page = 1 } = options;
+  const { limit = 10, page = 1 } = options;
+  const queryFilter = { ...filter, quantity: { $gt: 0 } };
 
   const count = await Order.countDocuments(filter);
   const totalPages = Math.ceil(count / limit);
   const skip = (page - 1) * limit;
 
-  const orders = await Order.find(filter)
+  const orders = await Order.find(queryFilter)
     .populate({
       path: "serviceId",
       populate: { path: "subCategoryId", select: "name  -_id", populate: { path: "categoryId", select: "name -_id" } },
