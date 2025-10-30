@@ -12,6 +12,7 @@ const uploadUsers = userFileUploadMiddleware(UPLOADS_FOLDER_USERS);
 const router = express.Router();
 
 router.route("/self/in").get(auth("common"), userController.getProfile);
+router.route("/allUsers").get(auth("admin"), userController.getUsers);
 
 router
   .route("/self/update")

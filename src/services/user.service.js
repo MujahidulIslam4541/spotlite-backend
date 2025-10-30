@@ -19,26 +19,9 @@ const createUser = async (userBody) => {
 
 
 
-const queryUsers = async (filter, options) => {
-  const query = {};
-
-  // Loop through each filter field and add conditions if they exist
-  for (const key of Object.keys(filter)) {
-    if (
-      (key === "fullName" || key === "email" || key === "username") &&
-      filter[key] !== ""
-    ) {
-      query[key] = { $regex: filter[key], $options: "i" }; // Case-insensitive regex search for name
-    } else if (filter[key] !== "") {
-      query[key] = filter[key];
-    }
-  }
-
-  const users = await User.paginate(query, options);
-
-  // Convert height and age to feet/inches here...
-
-  return users;
+const queryUsers = async (data) => {
+const users=await  User.find(data)
+return users;
 };
 
 
