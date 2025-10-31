@@ -2,8 +2,10 @@ const httpStatus = require("http-status");
 const catchAsync = require("../utils/catchAsync");
 const response = require("../config/response");
 const Order = require("../models/order.model");
-const { taskVerifyService } = require("../services/taskSubmission.service");
+const { taskVerifyService, allVerifyTask, singleTask } = require("../services/taskSubmission.service");
+const TaskSubmission = require("../models/TaskSubmissions");
 
+// create task only employ
 const taskVerifyController = catchAsync(async (req, res) => {
   const taskId = req.params.id;
   const userId = req.user.id;
@@ -50,7 +52,7 @@ const taskVerifyController = catchAsync(async (req, res) => {
     proofImage: proofImage || null,
     status: "verified",
     isVerified: true,
-    earning: employEarning, 
+    earning: employEarning,
   };
 
   const result = await taskVerifyService(verifyData);
@@ -65,4 +67,59 @@ const taskVerifyController = catchAsync(async (req, res) => {
   );
 });
 
-module.exports = { taskVerifyController };
+// get all task if is Verified
+const allTask = catchAsync(async (req, res) => {
+  const userId = req.user.id;
+  const page = parseInt(req.query.page) || 1;
+  const limit = parseInt(req.query.limit) || 10;
+
+  if (!userId) {
+    return res.status(httpStatus.UNAUTHORIZED).json(
+      response({
+        message: "Access denied: You are not valid employ",
+        status: "FAIL",
+        statusCode: httpStatus.UNAUTHORIZED,
+      })
+    );
+  }
+
+  const result = await allVerifyTask({ userId, page, limit });
+
+  res.status(httpStatus.OK).json(
+    response({
+      message: "All verified tasks fetched successfully",
+      status: "OK",
+      statusCode: httpStatus.OK,
+      data: result,
+    })
+  );
+});
+
+// single task get is verified
+const task = catchAsync(async (req, res) => {
+  const taskId = req.params.id;
+
+  const taskData = await TaskSubmission.findById(taskId)
+  if (!taskData) {
+    return res.status(httpStatus.NOT_FOUND).json(
+      response({
+        message: "Access denied: this is not valid taskId",
+        status: "FAIL",
+        statusCode: httpStatus.NOT_FOUND,
+      })
+    );
+  }
+
+  const result = await singleTask(taskData); 
+
+  res.status(httpStatus.OK).json(
+    response({
+      message: "Verified task fetched successfully",
+      status: "OK",
+      statusCode: httpStatus.OK,
+      data: result,
+    })
+  );
+});
+
+module.exports = { taskVerifyController, allTask ,task};
