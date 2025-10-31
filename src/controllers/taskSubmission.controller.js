@@ -1,12 +1,12 @@
 const httpStatus = require("http-status");
 const catchAsync = require("../utils/catchAsync");
 const response = require("../config/response");
+const Order = require("../models/order.model");
 const { taskVerifyService } = require("../services/taskSubmission.service");
 
 const taskVerifyController = catchAsync(async (req, res) => {
   const taskId = req.params.id;
   const userId = req.user.id;
-
   const { name, email, number, location, proofImage } = req.body;
 
   if (req.user.role !== "employ") {
@@ -18,6 +18,25 @@ const taskVerifyController = catchAsync(async (req, res) => {
       })
     );
   }
+
+  const order = await Order.findById(taskId).populate({
+    path: "serviceId",
+    select: "pricePerUnit",
+  });
+
+  if (!order) {
+    return res.status(httpStatus.NOT_FOUND).json(
+      response({
+        message: "Order not found",
+        status: "FAIL",
+        statusCode: httpStatus.NOT_FOUND,
+      })
+    );
+  }
+
+  const perServicePrice = order?.serviceId?.pricePerUnit || 0;
+
+  const employEarning = perServicePrice * 0.5;
 
   const verifyData = {
     taskId,
@@ -31,6 +50,7 @@ const taskVerifyController = catchAsync(async (req, res) => {
     proofImage: proofImage || null,
     status: "verified",
     isVerified: true,
+    earning: employEarning, 
   };
 
   const result = await taskVerifyService(verifyData);

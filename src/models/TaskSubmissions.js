@@ -19,7 +19,7 @@ const taskSubmissionSchema = new mongoose.Schema(
       location: { type: String, required: true },
     },
     proofImage: {
-      type: String, 
+      type: String,
     },
     status: {
       type: String,
@@ -40,9 +40,13 @@ const taskSubmissionSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    earning: {
+      type: Number,
+      default: 0,
+    },
   },
   { timestamps: true }
 );
 
-const TaskSubmission=mongoose.model("TaskSubmission", taskSubmissionSchema);
+const TaskSubmission = mongoose.model("TaskSubmission", taskSubmissionSchema);
 module.exports = TaskSubmission;
