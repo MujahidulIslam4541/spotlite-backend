@@ -2,8 +2,9 @@ const httpStatus = require("http-status");
 const catchAsync = require("../utils/catchAsync");
 const response = require("../config/response");
 const Service = require("../models/service.model");
-const { orderService, getOrdersByUser, allOrders, Orders } = require("../services/order.service");
+const { orderService, getOrdersByUser, allOrders, Orders, ordersDetails } = require("../services/order.service");
 
+// order only client
 const orderCreate = catchAsync(async (req, res) => {
   const { quantity = 1, addLink, addComment } = req.body;
   const userId = req.user.id;
@@ -52,6 +53,7 @@ const orderCreate = catchAsync(async (req, res) => {
   );
 });
 
+// get  my  order client
 const getMyOrders = catchAsync(async (req, res) => {
   const userId = req.user.id;
   const { page, limit } = req.query;
@@ -117,4 +119,20 @@ const OrdersController = catchAsync(async (req, res) => {
   );
 });
 
-module.exports = { orderCreate, getMyOrders, allOrdersController ,OrdersController};
+// get order details 
+const getOrderDetails = catchAsync(async (req, res) => {
+const  {orderId}=req.params.id;
+
+
+  const orders = await ordersDetails(orderId);
+  res.status(httpStatus.OK).json(
+    response({
+      message: "User orders fetched successfully",
+      status: "SUCCESS",
+      statusCode: httpStatus.OK,
+      data: orders,
+    })
+  );
+});
+
+module.exports = { orderCreate, getMyOrders, allOrdersController ,OrdersController,getOrderDetails};

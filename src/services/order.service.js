@@ -78,6 +78,7 @@ const Orders = async (filter = {}, options = {}) => {
     addLink: order.addLink,
     addComment: order.addComment,
     createdAt: order.createdAt,
+    id: order._id,
   }));
 
   return {
@@ -89,4 +90,25 @@ const Orders = async (filter = {}, options = {}) => {
   };
 };
 
-module.exports = { orderService, getOrdersByUser, allOrders, Orders };
+// order details for employ
+const ordersDetails = async (data) => {
+  const order = await Order.findOne(data).populate({
+    path: "serviceId",
+    populate: { path: "subCategoryId", select: "name  -_id", populate: { path: "categoryId", select: "name -_id" } },
+  });
+
+  const orders = {
+    categoryName: order.serviceId?.subCategoryId?.categoryId?.name,
+    subCategoryName: order.serviceId?.subCategoryId?.name,
+    orderName: order.orderName,
+    quantity: order.quantity,
+    addLink: order.addLink,
+    addComment: order.addComment,
+    createdAt: order.createdAt,
+    id: order._id,
+  };
+
+  return orders;
+};
+
+module.exports = { orderService, getOrdersByUser, allOrders, Orders, ordersDetails };
