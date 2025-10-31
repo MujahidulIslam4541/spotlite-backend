@@ -6,7 +6,8 @@ const { taskVerifyService } = require("../services/taskSubmission.service");
 const taskVerifyController = catchAsync(async (req, res) => {
   const taskId = req.params.id;
   const userId = req.user.id;
-  const data = req.body;
+
+  const { name, email, number, location, proofImage } = req.body;
 
   if (req.user.role !== "employ") {
     return res.status(httpStatus.UNAUTHORIZED).json(
@@ -18,11 +19,25 @@ const taskVerifyController = catchAsync(async (req, res) => {
     );
   }
 
-  const verifyData = { taskId, userId, data };
+  const verifyData = {
+    taskId,
+    userId,
+    verification: {
+      name,
+      email,
+      number,
+      location,
+    },
+    proofImage: proofImage || null,
+    status: "verified",
+    isVerified: true,
+  };
+
   const result = await taskVerifyService(verifyData);
+
   res.status(httpStatus.OK).json(
     response({
-      message: "employ task verify success",
+      message: "Employ task verification submitted successfully",
       status: "OK",
       statusCode: httpStatus.OK,
       data: result,
@@ -30,4 +45,4 @@ const taskVerifyController = catchAsync(async (req, res) => {
   );
 });
 
-module.exports={taskVerifyController}
+module.exports = { taskVerifyController };

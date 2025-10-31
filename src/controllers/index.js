@@ -3,6 +3,7 @@ module.exports.userController = require('./user.controller');
 module.exports.categoryController=require('./category.controller')
 module.exports.subCategoryController=require('./subCategory.controller')
 module.exports.serviceController=require('./service.controller')
+module.exports.taskSubmission=require('./taskSubmission.controller')
 
 
 
