@@ -2,7 +2,7 @@ const httpStatus = require("http-status");
 const catchAsync = require("../utils/catchAsync");
 const response = require("../config/response");
 const Order = require("../models/order.model");
-const { taskVerifyService, allVerifyTask, singleTask } = require("../services/taskSubmission.service");
+const { taskVerifyService, allVerifyTask, singleTask, updateTaskImage } = require("../services/taskSubmission.service");
 const TaskSubmission = require("../models/TaskSubmissions");
 
 // create task only employ
@@ -122,4 +122,31 @@ const task = catchAsync(async (req, res) => {
   );
 });
 
-module.exports = { taskVerifyController, allTask ,task};
+const taskUpdate = catchAsync(async (req, res) => {
+  const taskId = req.params.id;
+  const { image } = req.body; 
+
+  const taskData = await TaskSubmission.findById(taskId);
+  if (!taskData) {
+    return res.status(httpStatus.NOT_FOUND).json(
+      response({
+        message: "Access denied: this is not a valid taskId",
+        status: "FAIL",
+        statusCode: httpStatus.NOT_FOUND,
+      })
+    );
+  }
+
+  const updatedTask = await updateTaskImage(taskId, image);
+  return res.status(httpStatus.OK).json(
+    response({
+      message: "Task image updated successfully",
+      status: "SUCCESS",
+      statusCode: httpStatus.OK,
+      data: updatedTask,
+    })
+  );
+});
+
+
+module.exports = { taskVerifyController, allTask ,task,taskUpdate};
