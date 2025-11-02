@@ -23,14 +23,10 @@ const taskSubmissionSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["pending", "verified", "completed", "rejected"],
+      enum: ["pending", "approved", "completed", "rejected"],
       default: "pending",
     },
 
-    isVerified: {
-      type: Boolean,
-      default: false,
-    },
     isCompleted: {
       type: Boolean,
       default: false,

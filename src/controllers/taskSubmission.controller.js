@@ -9,7 +9,6 @@ const TaskSubmission = require("../models/TaskSubmissions");
 const taskVerifyController = catchAsync(async (req, res) => {
   const taskId = req.params.id;
   const userId = req.user.id;
-  const { name, email, number, location, proofImage } = req.body;
 
   if (req.user.role !== "employ") {
     return res.status(httpStatus.UNAUTHORIZED).json(
@@ -21,11 +20,7 @@ const taskVerifyController = catchAsync(async (req, res) => {
     );
   }
 
-  const order = await Order.findById(taskId).populate({
-    path: "serviceId",
-    select: "pricePerUnit",
-  });
-
+  const order = await Order.findById(taskId)
   if (!order) {
     return res.status(httpStatus.NOT_FOUND).json(
       response({
@@ -41,17 +36,10 @@ const taskVerifyController = catchAsync(async (req, res) => {
   const employEarning = perServicePrice * 0.5;
 
   const verifyData = {
-    taskId,
     userId,
-    verification: {
-      name,
-      email,
-      number,
-      location,
-    },
-    proofImage: proofImage || null,
-    status: "verified",
-    isVerified: true,
+    taskId,
+    status: "completed",
+    isCompleted: true,
     earning: employEarning,
   };
 
