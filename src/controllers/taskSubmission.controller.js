@@ -2,62 +2,13 @@ const httpStatus = require("http-status");
 const catchAsync = require("../utils/catchAsync");
 const response = require("../config/response");
 const Order = require("../models/order.model");
-const { taskVerifyService, allVerifyTask, singleTask, updateTaskImage } = require("../services/taskSubmission.service");
+const { taskVerifyService, allVerifyTask, singleTask, updateTaskImage, getAllUnclaimedTasks } = require("../services/taskSubmission.service");
 const TaskSubmission = require("../models/TaskSubmissions");
 
-// create task only employ
-// const taskVerifyController = catchAsync(async (req, res) => {
-//   const taskId = req.params.id;
-//   const userId = req.user.id;
-
-//   if (req.user.role !== "employ") {
-//     return res.status(httpStatus.UNAUTHORIZED).json(
-//       response({
-//         message: "Access denied: only employ can perform this action",
-//         status: "FAIL",
-//         statusCode: httpStatus.UNAUTHORIZED,
-//       })
-//     );
-//   }
-
-//   const order = await Order.findById(taskId)
-//   if (!order) {
-//     return res.status(httpStatus.NOT_FOUND).json(
-//       response({
-//         message: "Order not found",
-//         status: "FAIL",
-//         statusCode: httpStatus.NOT_FOUND,
-//       })
-//     );
-//   }
-
-//   const perServicePrice = order?.serviceId?.pricePerUnit || 0;
-
-//   const employEarning = perServicePrice * 0.5;
-
-//   const verifyData = {
-//     userId,
-//     taskId,
-//     status: "completed",
-//     isCompleted: true,
-//     earning: employEarning,
-//   };
-
-//   const result = await taskVerifyService(verifyData);
-
-//   res.status(httpStatus.OK).json(
-//     response({
-//       message: "Employ task verification submitted successfully",
-//       status: "OK",
-//       statusCode: httpStatus.OK,
-//       data: result,
-//     })
-//   );
-// });
 
 // create task only employ
 const taskVerifyController = catchAsync(async (req, res) => {
-  const {taskId} = req.body;
+  const { taskId } = req.body;
   const userId = req.user.id;
 
   if (req.user.role !== "employ") {
@@ -70,7 +21,7 @@ const taskVerifyController = catchAsync(async (req, res) => {
     );
   }
 
-  const order = await Order.findById(taskId).populate("serviceId"); 
+  const order = await Order.findById(taskId).populate("serviceId");
   if (!order) {
     return res.status(httpStatus.NOT_FOUND).json(
       response({
@@ -93,7 +44,6 @@ const taskVerifyController = catchAsync(async (req, res) => {
 
   const perServicePrice = order?.serviceId?.pricePerUnit || 0;
   const employEarning = perServicePrice * 0.5;
-
 
   const verifyData = {
     userId,
@@ -121,33 +71,69 @@ const taskVerifyController = catchAsync(async (req, res) => {
   );
 });
 
-// get all task if is Verified
+// ✅ Get all unclaimed tasks for employ
 const allTask = catchAsync(async (req, res) => {
   const userId = req.user.id;
-  const page = parseInt(req.query.page) || 1;
-  const limit = parseInt(req.query.limit) || 10;
+  const page = Number(req.query.page) || 1;
+  const limit = Number(req.query.limit) || 10;
 
   if (!userId) {
     return res.status(httpStatus.UNAUTHORIZED).json(
       response({
-        message: "Access denied: You are not valid employ",
+        message: "Access denied: You are not a valid employ",
         status: "FAIL",
         statusCode: httpStatus.UNAUTHORIZED,
       })
     );
   }
 
-  const result = await allVerifyTask({ userId, page, limit });
+  const result = await getAllUnclaimedTasks(userId, page, limit);
 
   res.status(httpStatus.OK).json(
     response({
-      message: "All verified tasks fetched successfully",
+      message: "Unclaimed tasks fetched successfully",
       status: "OK",
       statusCode: httpStatus.OK,
       data: result,
     })
   );
 });
+
+
+// const allVerifyTask = catchAsync(async (req, res) => {
+//   const userId = req.user.id;
+//   const page = Number(req.query.page) || 1;
+//   const limit = Number(req.query.limit) || 10;
+
+//   if (!userId) {
+//     return res.status(httpStatus.UNAUTHORIZED).json(
+//       response({
+//         message: "Access denied: You are not a valid employ",
+//         status: "FAIL",
+//         statusCode: httpStatus.UNAUTHORIZED,
+//       })
+//     );
+//   }
+
+//   const result = await getAllVerifiedTasks(userId, page, limit);
+
+//   res.status(httpStatus.OK).json(
+//     response({
+//       message: "Verified tasks fetched successfully",
+//       status: "OK",
+//       statusCode: httpStatus.OK,
+//       data: result,
+//     })
+//   );
+// });
+
+
+
+
+
+
+
+
 
 // single task get is verified
 const task = catchAsync(async (req, res) => {
@@ -168,7 +154,7 @@ const task = catchAsync(async (req, res) => {
 
   res.status(httpStatus.OK).json(
     response({
-      message: "Verified task fetched successfully",
+      message: " task fetched successfully",
       status: "OK",
       statusCode: httpStatus.OK,
       data: result,
@@ -203,3 +189,6 @@ const taskUpdate = catchAsync(async (req, res) => {
 });
 
 module.exports = { taskVerifyController, allTask, task, taskUpdate };
+
+
+

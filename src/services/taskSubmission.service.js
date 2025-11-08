@@ -17,24 +17,33 @@ const taskVerifyService = async (data) => {
 };
 
 
-// get all verified task
-const allVerifyTask = async ({ userId, page = 1, limit = 10 }) => {
+
+// ✅ Get all unclaimed tasks (not claimed by this employ)
+const getAllUnclaimedTasks = async (userId, page = 1, limit = 10) => {
+  // 🔹 Already claimed taskIds by this employ
+  const claimedTaskIds = await TaskSubmission.findById(userId)
+
+  // 🔹 Filter: exclude claimed tasks & quantity > 0
   const filter = {
-    userId,
-    isVerified: true,
-    isDelete: false,
+    _id: { $nin: claimedTaskIds },
+    quantity: { $gt: 0 },
   };
-  const count = await TaskSubmission.countDocuments(filter);
-  const totalPages = Math.ceil(count / limit);
-  const skip = (page - 1) * limit;
-  const tasks = await TaskSubmission.find(filter).sort({ createdAt: -1 }).skip(skip).limit(limit).lean();
+
+  // 🔹 Fetch tasks & count total
+  const [tasks, total] = await Promise.all([
+    Order.find(filter)
+      .populate("serviceId")
+      .skip((page - 1) * limit)
+      .limit(limit),
+    Order.countDocuments(filter),
+  ]);
 
   return {
     data: tasks,
-    page: parseInt(page),
-    limit: parseInt(limit),
-    totalPages,
-    totalResults: count,
+    page: Number(page),
+    limit: Number(limit),
+    totalResults: total,
+    totalPages: Math.ceil(total / limit),
   };
 };
 
@@ -55,4 +64,7 @@ const updateTaskImage = async (taskId, imageUrl) => {
 
   return updatedTask;
 };
-module.exports = { taskVerifyService, allVerifyTask, singleTask,updateTaskImage };
+module.exports = { taskVerifyService, getAllUnclaimedTasks, singleTask,updateTaskImage };
+
+
+
