@@ -2,9 +2,20 @@ const TaskSubmission = require("../models/TaskSubmissions");
 
 // create task only employ
 const taskVerifyService = async (data) => {
+  // check if already claimed by same employ for same task
+  const existing = await TaskSubmission.findOne({
+    userId: data.userId,
+    taskId: data.taskId,
+  });
+
+  if (existing) {
+    throw new Error("You have already claimed this task.");
+  }
+
   const task = await TaskSubmission.create(data);
   return task;
 };
+
 
 // get all verified task
 const allVerifyTask = async ({ userId, page = 1, limit = 10 }) => {

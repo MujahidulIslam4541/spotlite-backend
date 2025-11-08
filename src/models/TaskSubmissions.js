@@ -12,18 +12,12 @@ const taskSubmissionSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
-    verification: {
-      name: { type: String, required: true },
-      email: { type: String, required: true },
-      number: { type: String, required: true },
-      location: { type: String, required: true },
-    },
     proofImage: {
       type: String,
     },
     status: {
       type: String,
-      enum: ["pending", "approved", "completed", "rejected"],
+      enum: ["pending", "in-progress", "completed", "rejected"],
       default: "pending",
     },
 

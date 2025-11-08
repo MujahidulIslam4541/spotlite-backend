@@ -6,8 +6,58 @@ const { taskVerifyService, allVerifyTask, singleTask, updateTaskImage } = requir
 const TaskSubmission = require("../models/TaskSubmissions");
 
 // create task only employ
+// const taskVerifyController = catchAsync(async (req, res) => {
+//   const taskId = req.params.id;
+//   const userId = req.user.id;
+
+//   if (req.user.role !== "employ") {
+//     return res.status(httpStatus.UNAUTHORIZED).json(
+//       response({
+//         message: "Access denied: only employ can perform this action",
+//         status: "FAIL",
+//         statusCode: httpStatus.UNAUTHORIZED,
+//       })
+//     );
+//   }
+
+//   const order = await Order.findById(taskId)
+//   if (!order) {
+//     return res.status(httpStatus.NOT_FOUND).json(
+//       response({
+//         message: "Order not found",
+//         status: "FAIL",
+//         statusCode: httpStatus.NOT_FOUND,
+//       })
+//     );
+//   }
+
+//   const perServicePrice = order?.serviceId?.pricePerUnit || 0;
+
+//   const employEarning = perServicePrice * 0.5;
+
+//   const verifyData = {
+//     userId,
+//     taskId,
+//     status: "completed",
+//     isCompleted: true,
+//     earning: employEarning,
+//   };
+
+//   const result = await taskVerifyService(verifyData);
+
+//   res.status(httpStatus.OK).json(
+//     response({
+//       message: "Employ task verification submitted successfully",
+//       status: "OK",
+//       statusCode: httpStatus.OK,
+//       data: result,
+//     })
+//   );
+// });
+
+// create task only employ
 const taskVerifyController = catchAsync(async (req, res) => {
-  const taskId = req.params.id;
+  const {taskId} = req.body;
   const userId = req.user.id;
 
   if (req.user.role !== "employ") {
@@ -20,7 +70,7 @@ const taskVerifyController = catchAsync(async (req, res) => {
     );
   }
 
-  const order = await Order.findById(taskId)
+  const order = await Order.findById(taskId).populate("serviceId"); 
   if (!order) {
     return res.status(httpStatus.NOT_FOUND).json(
       response({
@@ -31,26 +81,42 @@ const taskVerifyController = catchAsync(async (req, res) => {
     );
   }
 
-  const perServicePrice = order?.serviceId?.pricePerUnit || 0;
+  if (order.quantity <= 0) {
+    return res.status(httpStatus.BAD_REQUEST).json(
+      response({
+        message: "Order quantity is 0 — cannot claim this order.",
+        status: "FAIL",
+        statusCode: httpStatus.BAD_REQUEST,
+      })
+    );
+  }
 
+  const perServicePrice = order?.serviceId?.pricePerUnit || 0;
   const employEarning = perServicePrice * 0.5;
+
 
   const verifyData = {
     userId,
     taskId,
-    status: "completed",
-    isCompleted: true,
+    status: "in-progress",
+    isCompleted: false,
     earning: employEarning,
   };
 
   const result = await taskVerifyService(verifyData);
 
+  order.quantity = order.quantity - 1;
+  await order.save();
+
   res.status(httpStatus.OK).json(
     response({
-      message: "Employ task verification submitted successfully",
+      message: "Task claimed successfully & order quantity updated.",
       status: "OK",
       statusCode: httpStatus.OK,
-      data: result,
+      data: {
+        taskSubmission: result,
+        remainingQuantity: order.quantity,
+      },
     })
   );
 });
@@ -87,7 +153,7 @@ const allTask = catchAsync(async (req, res) => {
 const task = catchAsync(async (req, res) => {
   const taskId = req.params.id;
 
-  const taskData = await TaskSubmission.findById(taskId)
+  const taskData = await TaskSubmission.findById(taskId);
   if (!taskData) {
     return res.status(httpStatus.NOT_FOUND).json(
       response({
@@ -98,7 +164,7 @@ const task = catchAsync(async (req, res) => {
     );
   }
 
-  const result = await singleTask(taskData); 
+  const result = await singleTask(taskData);
 
   res.status(httpStatus.OK).json(
     response({
@@ -112,7 +178,7 @@ const task = catchAsync(async (req, res) => {
 
 const taskUpdate = catchAsync(async (req, res) => {
   const taskId = req.params.id;
-  const { image } = req.body; 
+  const { image } = req.body;
 
   const taskData = await TaskSubmission.findById(taskId);
   if (!taskData) {
@@ -136,5 +202,4 @@ const taskUpdate = catchAsync(async (req, res) => {
   );
 });
 
-
-module.exports = { taskVerifyController, allTask ,task,taskUpdate};
+module.exports = { taskVerifyController, allTask, task, taskUpdate };
