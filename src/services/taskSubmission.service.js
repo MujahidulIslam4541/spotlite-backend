@@ -2,10 +2,10 @@ const TaskSubmission = require("../models/TaskSubmissions");
 
 // create task only employ
 const taskVerifyService = async (data) => {
-  // check if already claimed by same employ for same task
   const existing = await TaskSubmission.findOne({
     userId: data.userId,
     taskId: data.taskId,
+    
   });
 
   if (existing) {
@@ -20,12 +20,13 @@ const taskVerifyService = async (data) => {
 
 // ✅ Get all unclaimed tasks (not claimed by this employ)
 const getAllUnclaimedTasks = async (userId, page = 1, limit = 10) => {
-  // 🔹 Already claimed taskIds by this employ
-  const claimedTaskIds = await TaskSubmission.findById(userId)
 
-  // 🔹 Filter: exclude claimed tasks & quantity > 0
+  const claimedTask = await TaskSubmission.findOne({ userId: userId });
+
+  if (claimedTask) {
+    return { message: 'You have already claimed a task.' };
+  }
   const filter = {
-    _id: { $nin: claimedTaskIds },
     quantity: { $gt: 0 },
   };
 

@@ -12,6 +12,11 @@ const getService = async (filter = {}) => {
   return category;
 };
 
+const getServiceById = async (id) => {
+  const service = await Service.findById(id);
+  return service;
+};
+
 // ✅ Update by ID
 const updateService = async (id, data) => {
   const updated = await Service.findByIdAndUpdate(id, data, {
@@ -27,4 +32,4 @@ const deleteService = async (id) => {
   return deleted;
 };
 
-module.exports = { serviceService, getService, updateService, deleteService };
+module.exports = { serviceService, getService, updateService, deleteService ,getServiceById};

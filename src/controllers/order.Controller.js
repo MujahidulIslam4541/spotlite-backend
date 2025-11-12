@@ -3,12 +3,12 @@ const catchAsync = require("../utils/catchAsync");
 const response = require("../config/response");
 const Service = require("../models/service.model");
 const { orderService, getOrdersByUser, allOrders, Orders, ordersDetails } = require("../services/order.service");
+const { getServiceById } = require("../services/service.service");
 
 // order only client
 const orderCreate = catchAsync(async (req, res) => {
-  const { quantity = 1, addLink, addComment } = req.body;
-  const userId = req.user.id;
-  const serviceId = req.params.id;
+  const { quantity = 1, addLink, addComment,serviceId } = req.body;
+  const clientId = req.user.id;
 
   if (req.user.role !== "client") {
     return res.status(httpStatus.FORBIDDEN).json(
@@ -19,7 +19,7 @@ const orderCreate = catchAsync(async (req, res) => {
       })
     );
   }
-  const service = await Service.findById(serviceId);
+  const service = await getServiceById(serviceId);
   if (!service) {
     return res.status(httpStatus.NOT_FOUND).json(
       response({
@@ -33,7 +33,7 @@ const orderCreate = catchAsync(async (req, res) => {
   const totalPrice = service.pricePerUnit * quantity;
 
   const createOrder = {
-    userId,
+    clientId,
     serviceId,
     addLink,
     addComment,
@@ -98,6 +98,7 @@ const allOrdersController = catchAsync(async (req, res) => {
 //   orders only employ and her feed
 const OrdersController = catchAsync(async (req, res) => {
   const { page, limit } = req.query;
+  const userId =req.user.id;
   if (req.user.role !== "employ") {
     return res.status(httpStatus.UNAUTHORIZED).json(
       response({
@@ -108,7 +109,7 @@ const OrdersController = catchAsync(async (req, res) => {
     );
   }
 
-  const result = await Orders({ page, limit });
+  const result = await Orders( page, limit,userId );
   res.status(httpStatus.OK).json(
     response({
       message: "All orders fetched successfully",

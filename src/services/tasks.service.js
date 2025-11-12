@@ -67,6 +67,23 @@ const updateTaskById = async (id, bodyData, image) => {
   return task;
 };
 
+const getTasksById = async (id, userId) => {
+  const task = await Tasks.fidnOne({_id:id});
+  return task;
+};
+
+const claimedTask = async (id, userId) => {
+  const task = await getTasksById(id);
+  if (!task) {
+    throw new ApiError(httpStatus.NOT_FOUND, "Task not found");
+  }
+  if(task.usersId)
+
+  Object.assign(task, bodyData);
+  await task.save();
+  return task;
+};
+
 
 module.exports = {
   createTask,

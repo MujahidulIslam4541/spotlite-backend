@@ -5,7 +5,7 @@ const { orderCreate, getMyOrders, allOrdersController, OrdersController, getOrde
 
 
 const router = express.Router();
-router.route("/order/:id").post(auth('client'),orderCreate);
+router.route("/create").post(auth('client'),orderCreate);
 router.route("/orders/me").get(auth('client'), getMyOrders);
 router.route("/orders").get(auth('admin'), allOrdersController);
 router.route("/orders/employ").get(auth('employ'), OrdersController);

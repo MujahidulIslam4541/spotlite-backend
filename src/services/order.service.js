@@ -5,20 +5,15 @@ const orderService = async (data) => {
   return order;
 };
 
+// get order by id
 const getOrdersByUser = async (userId, options = {}) => {
   const { limit = 10, page = 1 } = options;
-
   const filter = { userId };
   const count = await Order.countDocuments(filter);
   const totalPages = Math.ceil(count / limit);
   const skip = (page - 1) * limit;
 
   const orders = await Order.find(filter)
-    // .populate({
-    //   path: "serviceId",
-    //   // select: "name pricePerUnit subCategoryId totalPrice",
-    //   // populate: { path: "subCategoryId", select: "name categoryId" },
-    // })
     .sort({ createdAt: -1 })
     .skip(skip)
     .limit(limit)
@@ -52,9 +47,10 @@ const allOrders = async (filter = {}, options = {}) => {
 };
 
 // orders for employs
-const Orders = async (filter = {}, options = {}) => {
+const Orders = async (filter = {}, options = {},userId) => {
   const { limit = 10, page = 1 } = options;
-  const queryFilter = { ...filter, quantity: { $gt: 0 } };
+  const queryFilter = { ...filter, quantity: { $gt: 0 },userId: {$nin: [userId]} };
+  console.log(queryFilter);
 
   const count = await Order.countDocuments(filter);
   const totalPages = Math.ceil(count / limit);
@@ -69,7 +65,6 @@ const Orders = async (filter = {}, options = {}) => {
     .skip(skip)
     .limit(limit)
     .lean();
-
   const filteredOrders = orders.map((order) => ({
     categoryName: order.serviceId?.subCategoryId?.categoryId?.name,
     subCategoryName: order.serviceId?.subCategoryId?.name,
@@ -110,5 +105,9 @@ const ordersDetails = async (data) => {
 
   return orders;
 };
+
+
+
+
 
 module.exports = { orderService, getOrdersByUser, allOrders, Orders, ordersDetails };
