@@ -8,6 +8,7 @@ const subCategory=require('./subCategory.routes')
 const serviceRoute=require('./service.routes')
 const orderRoute=require('./order.routes')
 const  taskSubmission=require('./taskSubmission.routes')
+const  terms=require('./terms.route')
 
 
 const router = express.Router();
@@ -40,6 +41,10 @@ const defaultRoutes = [
   {
     path: "/task",
     route: taskSubmission,
+  },
+  {
+    path: "/terms",
+    route: terms,
   },
  
 ];
