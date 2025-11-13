@@ -9,6 +9,7 @@ const serviceRoute=require('./service.routes')
 const orderRoute=require('./order.routes')
 const  taskSubmission=require('./taskSubmission.routes')
 const  terms=require('./terms.route')
+const  about=require('./about.routes')
 
 
 const router = express.Router();
@@ -45,6 +46,10 @@ const defaultRoutes = [
   {
     path: "/terms",
     route: terms,
+  },
+  {
+    path: "/about",
+    route: about,
   },
  
 ];
