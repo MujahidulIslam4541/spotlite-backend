@@ -10,6 +10,7 @@ const {
   claimedTask,
 } = require("../services/order.service");
 const { getServiceById } = require("../services/service.service");
+const { update } = require("lodash");
 
 // order only client
 const orderCreate = catchAsync(async (req, res) => {
@@ -146,7 +147,6 @@ const claimedTaskController = catchAsync(async (req, res) => {
   const userId = req.user.id;
 
   const updated = await claimedTask(id, userId);
-
   if (!updated) {
     return res.status(httpStatus.NOT_FOUND).json(
       response({
@@ -156,6 +156,9 @@ const claimedTaskController = catchAsync(async (req, res) => {
       })
     );
   }
+
+  // order.quantity = order.quantity - 1;
+  // await order.save();
 
   res.status(httpStatus.OK).json(
     response({

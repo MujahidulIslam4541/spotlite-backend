@@ -108,9 +108,16 @@ const ordersDetails = async (data) => {
 
 // ✅ claimedTask by ID
 const claimedTask = async (id, userId) => {
-  const claimed = await Order.findByIdAndUpdate(
-    id,
-    { $addToSet: { employId: userId } }, 
+  const claimed = await Order.findOneAndUpdate(
+    {
+      _id: id,
+      quantity: { $gt: 0 }, 
+      employId: { $ne: userId } 
+    },
+    {
+      $addToSet: { employId: userId },
+      $inc: { quantity: -1 } 
+    },
     {
       new: true,
       runValidators: true,
