@@ -5,6 +5,7 @@ const catchAsync = require("../utils/catchAsync");
 const response = require("../config/response");
 const { userService } = require("../services");
 const unlinkImages = require("../common/unlinkImage");
+const { queryUsers, getUsersByCurrentMonth } = require("../services/user.service");
 
 const createUser = catchAsync(async (req, res) => {
   const user = await userService.createUser(req.body);
@@ -22,17 +23,27 @@ const createUser = catchAsync(async (req, res) => {
 // get all employ
 const getUsers = catchAsync(async (req, res) => {
   const { role } = req.query; 
-  const filter = role ? { role } : {}; 
-  const result = await userService.queryUsers(filter);
+  const filter = role ? { role } : {};
+
+  const allUsers = await queryUsers(filter);
+  const currentMonthUsers = await getUsersByCurrentMonth(role);
+
   res.status(httpStatus.OK).json(
     response({
-      message: "All Users",
+      message: "All Users with Monthly Summary",
       status: "OK",
       statusCode: httpStatus.OK,
-      data: result,
+      data: {
+        totalUsers: allUsers.length,
+        totalThisMonth: currentMonthUsers.length,
+        allUsers,
+        currentMonthUsers,
+      },
     })
   );
 });
+
+
 
 const getProfile = catchAsync(async (req, res) => {
   const user = await userService.getUserById(req.user.id);
@@ -147,4 +158,5 @@ module.exports = {
   updateUser,
   updateProfile,
   deleteUser,
+  getUsersByCurrentMonth,
 };

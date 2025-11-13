@@ -25,6 +25,21 @@ return users;
 };
 
 
+// get this mount client and employ
+const getUsersByCurrentMonth = async (role) => {
+  const startOfMonth = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
+  const endOfMonth = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0);
+
+  const filter = {
+    createdAt: { $gte: startOfMonth, $lte: endOfMonth },
+  };
+
+  if (role) filter.role = role; 
+
+  const users = await User.find(filter);
+  return users;
+};
+
 
 const getUserById = async (id) => {
   return User.findById(id);
@@ -97,5 +112,6 @@ module.exports = {
   getUserByEmail,
   updateUserById,
   deleteUserById,
-  isUpdateUser
+  isUpdateUser,
+  getUsersByCurrentMonth
 };

@@ -1847,956 +1847,6 @@
 			]
 		},
 		{
-			"name": "taskCreate",
-			"item": [
-				{
-					"name": "category",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{accessToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"buisness\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/api/v1/category/category",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"category",
-								"category"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "success",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"video\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/api/v1/category/category",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"category",
-										"category"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "Text",
-							"header": [
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-								},
-								{
-									"key": "Cross-Origin-Opener-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Cross-Origin-Resource-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Origin-Agent-Cluster",
-									"value": "?1"
-								},
-								{
-									"key": "Referrer-Policy",
-									"value": "no-referrer"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-DNS-Prefetch-Control",
-									"value": "off"
-								},
-								{
-									"key": "X-Download-Options",
-									"value": "noopen"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Permitted-Cross-Domain-Policies",
-									"value": "none"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "199"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"c7-7dRrhh94WUZ3kD+IZD4zPqrB8H8\""
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 26 Oct 2025 18:13:32 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 201,\n    \"message\": \"category Created\",\n    \"data\": {\n        \"attributes\": {\n            \"name\": \"video\",\n            \"_id\": \"68fe64cb1b85a47a2afa0577\",\n            \"createdAt\": \"2025-10-26T18:13:31.982Z\",\n            \"updatedAt\": \"2025-10-26T18:13:31.982Z\",\n            \"__v\": 0\n        }\n    }\n}"
-						},
-						{
-							"name": "success",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"video\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/api/v1/category/category",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"category",
-										"category"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "Text",
-							"header": [
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-								},
-								{
-									"key": "Cross-Origin-Opener-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Cross-Origin-Resource-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Origin-Agent-Cluster",
-									"value": "?1"
-								},
-								{
-									"key": "Referrer-Policy",
-									"value": "no-referrer"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-DNS-Prefetch-Control",
-									"value": "off"
-								},
-								{
-									"key": "X-Download-Options",
-									"value": "noopen"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Permitted-Cross-Domain-Policies",
-									"value": "none"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "199"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"c7-wsTOYldo25brAe7foq4eRs+xueI\""
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 28 Oct 2025 16:47:51 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 201,\n    \"message\": \"category Created\",\n    \"data\": {\n        \"attributes\": {\n            \"name\": \"video\",\n            \"_id\": \"6900f3b78b7083108d6e1fd7\",\n            \"createdAt\": \"2025-10-28T16:47:51.315Z\",\n            \"updatedAt\": \"2025-10-28T16:47:51.315Z\",\n            \"__v\": 0\n        }\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "subCategory",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{accessToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"youtube\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/api/v1/subCategory/subCategory/69038a67fc34a563dc613bf7",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"subCategory",
-								"subCategory",
-								"69038a67fc34a563dc613bf7"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "success",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\":\"youtube\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/api/v1/subCategory/subCategory/68fe64cb1b85a47a2afa0577",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"subCategory",
-										"subCategory",
-										"68fe64cb1b85a47a2afa0577"
-									],
-									"query": [
-										{
-											"key": "id",
-											"value": "68fe2bb2cd4b5c71222d8a81",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "Text",
-							"header": [
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-								},
-								{
-									"key": "Cross-Origin-Opener-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Cross-Origin-Resource-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Origin-Agent-Cluster",
-									"value": "?1"
-								},
-								{
-									"key": "Referrer-Policy",
-									"value": "no-referrer"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-DNS-Prefetch-Control",
-									"value": "off"
-								},
-								{
-									"key": "X-Download-Options",
-									"value": "noopen"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Permitted-Cross-Domain-Policies",
-									"value": "none"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "244"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"f4-oq/H5X/iFJJmvksYBbVboI+LDyU\""
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 26 Oct 2025 18:14:42 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 201,\n    \"message\": \"Subcategory Created\",\n    \"data\": {\n        \"attributes\": {\n            \"name\": \"youtube\",\n            \"categoryId\": \"68fe64cb1b85a47a2afa0577\",\n            \"_id\": \"68fe651223d1037abcc25b35\",\n            \"createdAt\": \"2025-10-26T18:14:42.754Z\",\n            \"updatedAt\": \"2025-10-26T18:14:42.754Z\",\n            \"__v\": 0\n        }\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "service",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{accessToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"per comment\",\r\n    \"pricePerUnit\":6\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/api/v1/service/service/6903b9be7f203ee89d451377",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"service",
-								"service",
-								"6903b9be7f203ee89d451377"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "success",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\":\"per comments\",\r\n    \"pricePerUnit\":2\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/api/v1/service/service/68fe651223d1037abcc25b35",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"service",
-										"service",
-										"68fe651223d1037abcc25b35"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "Text",
-							"header": [
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-								},
-								{
-									"key": "Cross-Origin-Opener-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Cross-Origin-Resource-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Origin-Agent-Cluster",
-									"value": "?1"
-								},
-								{
-									"key": "Referrer-Policy",
-									"value": "no-referrer"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-DNS-Prefetch-Control",
-									"value": "off"
-								},
-								{
-									"key": "X-Download-Options",
-									"value": "noopen"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Permitted-Cross-Domain-Policies",
-									"value": "none"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "265"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"109-5uR2s3E3RUcEo++Ac5XkYPS/TN0\""
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 26 Oct 2025 18:16:13 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 201,\n    \"message\": \"service Created\",\n    \"data\": {\n        \"attributes\": {\n            \"name\": \"per comments\",\n            \"subCategoryId\": \"68fe651223d1037abcc25b35\",\n            \"pricePerUnit\": 2,\n            \"_id\": \"68fe656d23d1037abcc25b38\",\n            \"createdAt\": \"2025-10-26T18:16:13.578Z\",\n            \"updatedAt\": \"2025-10-26T18:16:13.578Z\",\n            \"__v\": 0\n        }\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "getCategory",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": ""
-						}
-					},
-					"response": [
-						{
-							"name": "success",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{url}}/api/v1/category/category",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"category",
-										"category"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "Text",
-							"header": [
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-								},
-								{
-									"key": "Cross-Origin-Opener-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Cross-Origin-Resource-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Origin-Agent-Cluster",
-									"value": "?1"
-								},
-								{
-									"key": "Referrer-Policy",
-									"value": "no-referrer"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-DNS-Prefetch-Control",
-									"value": "off"
-								},
-								{
-									"key": "X-Download-Options",
-									"value": "noopen"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Permitted-Cross-Domain-Policies",
-									"value": "none"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "340"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"154-V0Yjf5UDTdIkCbYK0LxjEHkR8PM\""
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 29 Oct 2025 11:52:11 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 200,\n    \"message\": \"all category\",\n    \"data\": {\n        \"attributes\": [\n            {\n                \"_id\": \"68ff552cb288385c5898c895\",\n                \"name\": \"social media\",\n                \"createdAt\": \"2025-10-27T11:19:08.506Z\",\n                \"updatedAt\": \"2025-10-27T11:19:08.506Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"6901fe1c49213e006275a4c2\",\n                \"name\": \"video\",\n                \"createdAt\": \"2025-10-29T11:44:28.086Z\",\n                \"updatedAt\": \"2025-10-29T11:44:28.086Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "getSubcategory",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": ""
-						}
-					},
-					"response": [
-						{
-							"name": "success",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{url}}/api/v1/subCategory/subCategory",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"subCategory",
-										"subCategory"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "Text",
-							"header": [
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-								},
-								{
-									"key": "Cross-Origin-Opener-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Cross-Origin-Resource-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Origin-Agent-Cluster",
-									"value": "?1"
-								},
-								{
-									"key": "Referrer-Policy",
-									"value": "no-referrer"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-DNS-Prefetch-Control",
-									"value": "off"
-								},
-								{
-									"key": "X-Download-Options",
-									"value": "noopen"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Permitted-Cross-Domain-Policies",
-									"value": "none"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "424"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"1a8-8C3EZahxPEusr8+NEPE4qaoGcqk\""
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 29 Oct 2025 12:00:38 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 201,\n    \"message\": \"Subcategory Created\",\n    \"data\": {\n        \"attributes\": [\n            {\n                \"_id\": \"68ff55e7b288385c5898c899\",\n                \"name\": \"youtube\",\n                \"categoryId\": \"68ff552cb288385c5898c895\",\n                \"createdAt\": \"2025-10-27T11:22:15.560Z\",\n                \"updatedAt\": \"2025-10-27T11:22:15.560Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"6901fe7149213e006275a4c8\",\n                \"name\": \"youtube\",\n                \"categoryId\": \"6901fe1c49213e006275a4c2\",\n                \"createdAt\": \"2025-10-29T11:45:53.630Z\",\n                \"updatedAt\": \"2025-10-29T11:45:53.630Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "getservice",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": ""
-						}
-					},
-					"response": [
-						{
-							"name": "success",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{url}}/api/v1/service/service",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"service",
-										"service"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "Text",
-							"header": [
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-								},
-								{
-									"key": "Cross-Origin-Opener-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Cross-Origin-Resource-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Origin-Agent-Cluster",
-									"value": "?1"
-								},
-								{
-									"key": "Referrer-Policy",
-									"value": "no-referrer"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-DNS-Prefetch-Control",
-									"value": "off"
-								},
-								{
-									"key": "X-Download-Options",
-									"value": "noopen"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Permitted-Cross-Domain-Policies",
-									"value": "none"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "738"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"2e2-MrQxNu4SizYWwciqd6h2FVuoW6A\""
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 29 Oct 2025 12:04:45 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 200,\n    \"message\": \"all service here\",\n    \"data\": {\n        \"attributes\": [\n            {\n                \"_id\": \"68ff586eb288385c5898c89d\",\n                \"name\": \"per comments\",\n                \"pricePerUnit\": 2,\n                \"createdAt\": \"2025-10-27T11:33:02.651Z\",\n                \"updatedAt\": \"2025-10-27T11:33:02.651Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"68ff5d9a127bfb0cac95f51b\",\n                \"name\": \"per like\",\n                \"pricePerUnit\": 1,\n                \"createdAt\": \"2025-10-27T11:55:06.252Z\",\n                \"updatedAt\": \"2025-10-27T11:55:06.252Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"68ff5da4127bfb0cac95f51f\",\n                \"name\": \"per view\",\n                \"pricePerUnit\": 0.5,\n                \"createdAt\": \"2025-10-27T11:55:16.482Z\",\n                \"updatedAt\": \"2025-10-27T11:55:16.482Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"6901feb349213e006275a4cd\",\n                \"name\": \"per like\",\n                \"subCategoryId\": \"6901fe7149213e006275a4c8\",\n                \"pricePerUnit\": 2,\n                \"createdAt\": \"2025-10-29T11:46:59.171Z\",\n                \"updatedAt\": \"2025-10-29T11:46:59.171Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
-						}
-					]
-				}
-			]
-		},
-		{
 			"name": "homePage",
 			"item": [
 				{
@@ -3156,246 +2206,3113 @@
 			"name": "Admin",
 			"item": [
 				{
-					"name": "allOrders",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": ""
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "AllUsers",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": [
+					"name": "taskCreate",
+					"item": [
 						{
-							"name": "allEmploysuccess",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{url}}/api/v1/users/allUsers?role=employ",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"users",
-										"allUsers"
-									],
-									"query": [
+							"name": "service",
+							"item": [
+								{
+									"name": "service",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\":\"per comment\",\r\n    \"pricePerUnit\":6\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/service/service/6903b9be7f203ee89d451377",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"service",
+												"service",
+												"6903b9be7f203ee89d451377"
+											]
+										}
+									},
+									"response": [
 										{
-											"key": "role",
-											"value": "employ"
+											"name": "success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"name\":\"per comments\",\r\n    \"pricePerUnit\":2\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/service/service/68fe651223d1037abcc25b35",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"service",
+														"service",
+														"68fe651223d1037abcc25b35"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "Text",
+											"header": [
+												{
+													"key": "Content-Security-Policy",
+													"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+												},
+												{
+													"key": "Cross-Origin-Opener-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Cross-Origin-Resource-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Origin-Agent-Cluster",
+													"value": "?1"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "no-referrer"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-DNS-Prefetch-Control",
+													"value": "off"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "265"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"109-5uR2s3E3RUcEo++Ac5XkYPS/TN0\""
+												},
+												{
+													"key": "Vary",
+													"value": "Accept-Encoding"
+												},
+												{
+													"key": "Date",
+													"value": "Sun, 26 Oct 2025 18:16:13 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 201,\n    \"message\": \"service Created\",\n    \"data\": {\n        \"attributes\": {\n            \"name\": \"per comments\",\n            \"subCategoryId\": \"68fe651223d1037abcc25b35\",\n            \"pricePerUnit\": 2,\n            \"_id\": \"68fe656d23d1037abcc25b38\",\n            \"createdAt\": \"2025-10-26T18:16:13.578Z\",\n            \"updatedAt\": \"2025-10-26T18:16:13.578Z\",\n            \"__v\": 0\n        }\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "getservice",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": ""
+										}
+									},
+									"response": [
+										{
+											"name": "success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/service/service",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"service",
+														"service"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "Text",
+											"header": [
+												{
+													"key": "Content-Security-Policy",
+													"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+												},
+												{
+													"key": "Cross-Origin-Opener-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Cross-Origin-Resource-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Origin-Agent-Cluster",
+													"value": "?1"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "no-referrer"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-DNS-Prefetch-Control",
+													"value": "off"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "738"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"2e2-MrQxNu4SizYWwciqd6h2FVuoW6A\""
+												},
+												{
+													"key": "Vary",
+													"value": "Accept-Encoding"
+												},
+												{
+													"key": "Date",
+													"value": "Wed, 29 Oct 2025 12:04:45 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 200,\n    \"message\": \"all service here\",\n    \"data\": {\n        \"attributes\": [\n            {\n                \"_id\": \"68ff586eb288385c5898c89d\",\n                \"name\": \"per comments\",\n                \"pricePerUnit\": 2,\n                \"createdAt\": \"2025-10-27T11:33:02.651Z\",\n                \"updatedAt\": \"2025-10-27T11:33:02.651Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"68ff5d9a127bfb0cac95f51b\",\n                \"name\": \"per like\",\n                \"pricePerUnit\": 1,\n                \"createdAt\": \"2025-10-27T11:55:06.252Z\",\n                \"updatedAt\": \"2025-10-27T11:55:06.252Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"68ff5da4127bfb0cac95f51f\",\n                \"name\": \"per view\",\n                \"pricePerUnit\": 0.5,\n                \"createdAt\": \"2025-10-27T11:55:16.482Z\",\n                \"updatedAt\": \"2025-10-27T11:55:16.482Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"6901feb349213e006275a4cd\",\n                \"name\": \"per like\",\n                \"subCategoryId\": \"6901fe7149213e006275a4c8\",\n                \"pricePerUnit\": 2,\n                \"createdAt\": \"2025-10-29T11:46:59.171Z\",\n                \"updatedAt\": \"2025-10-29T11:46:59.171Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "updateService",
+									"request": {
+										"method": "PUT",
+										"header": []
+									},
+									"response": [
+										{
+											"name": "success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"name\":\"per viewssss\",\r\n    \"pricePerUnit\":10\r\n\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/service/service/69088646aa14840d782dfb90",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"service",
+														"service",
+														"69088646aa14840d782dfb90"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": null,
+											"header": [
+												{
+													"key": "Content-Security-Policy",
+													"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+												},
+												{
+													"key": "Cross-Origin-Opener-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Cross-Origin-Resource-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Origin-Agent-Cluster",
+													"value": "?1"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "no-referrer"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-DNS-Prefetch-Control",
+													"value": "off"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "279"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"117-2XqkXG/+ff/8rCBCFFueVQKGQfY\""
+												},
+												{
+													"key": "Vary",
+													"value": "Accept-Encoding"
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 03 Nov 2025 10:40:57 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 200,\n    \"message\": \"Service updated successfully\",\n    \"data\": {\n        \"attributes\": {\n            \"_id\": \"69088646aa14840d782dfb90\",\n            \"name\": \"per viewssss\",\n            \"subCategoryId\": \"6903b9be7f203ee89d451377\",\n            \"pricePerUnit\": 10,\n            \"createdAt\": \"2025-11-03T10:39:02.071Z\",\n            \"updatedAt\": \"2025-11-03T10:40:56.910Z\",\n            \"__v\": 0\n        }\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "deleteService",
+									"request": {
+										"method": "DELETE",
+										"header": []
+									},
+									"response": [
+										{
+											"name": "success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/service/service/6903b9db7f203ee89d451387",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"service",
+														"service",
+														"6903b9db7f203ee89d451387"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": null,
+											"header": [
+												{
+													"key": "Content-Security-Policy",
+													"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+												},
+												{
+													"key": "Cross-Origin-Opener-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Cross-Origin-Resource-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Origin-Agent-Cluster",
+													"value": "?1"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "no-referrer"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-DNS-Prefetch-Control",
+													"value": "off"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "63"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"3f-LF3FkIG6XyZjz91W/3B0guQ3Eos\""
+												},
+												{
+													"key": "Vary",
+													"value": "Accept-Encoding"
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 03 Nov 2025 10:50:03 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 200,\n    \"message\": \"Service deleted successfully\",\n    \"data\": {}\n}"
 										}
 									]
 								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": null,
-							"header": [
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-								},
-								{
-									"key": "Cross-Origin-Opener-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Cross-Origin-Resource-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Origin-Agent-Cluster",
-									"value": "?1"
-								},
-								{
-									"key": "Referrer-Policy",
-									"value": "no-referrer"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-DNS-Prefetch-Control",
-									"value": "off"
-								},
-								{
-									"key": "X-Download-Options",
-									"value": "noopen"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Permitted-Cross-Domain-Policies",
-									"value": "none"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "422"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"1a6-jsONX9H6eTtFe9wgueKqx4NNShc\""
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 30 Oct 2025 16:02:03 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 200,\n    \"message\": \"All Users\",\n    \"data\": {\n        \"attributes\": [\n            {\n                \"firstName\": null,\n                \"lastName\": null,\n                \"fullName\": \"Testing Super Admin\",\n                \"email\": \"super.admin@gmail.com\",\n                \"image\": \"/uploads/users/user.png\",\n                \"role\": \"employ\",\n                \"callingCode\": null,\n                \"phoneNumber\": 1735566789,\n                \"nidNumber\": null,\n                \"isNIDVerified\": null,\n                \"dataOfBirth\": null,\n                \"address\": null,\n                \"isProfileCompleted\": false,\n                \"createdAt\": \"2025-10-30T15:04:26.539Z\",\n                \"id\": \"69037e7ab152c09da24ae14f\"\n            }\n        ]\n    }\n}"
+							]
 						},
 						{
-							"name": "AllClientSuccess",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{url}}/api/v1/users/allUsers?role=client",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"users",
-										"allUsers"
-									],
-									"query": [
+							"name": "subCategory",
+							"item": [
+								{
+									"name": "subCategory",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\":\"youtube\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/subCategory/subCategory/69038a67fc34a563dc613bf7",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"subCategory",
+												"subCategory",
+												"69038a67fc34a563dc613bf7"
+											]
+										}
+									},
+									"response": [
 										{
-											"key": "role",
-											"value": "client"
+											"name": "success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"name\":\"youtube\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/subCategory/subCategory/68fe64cb1b85a47a2afa0577",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"subCategory",
+														"subCategory",
+														"68fe64cb1b85a47a2afa0577"
+													],
+													"query": [
+														{
+															"key": "id",
+															"value": "68fe2bb2cd4b5c71222d8a81",
+															"disabled": true
+														}
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "Text",
+											"header": [
+												{
+													"key": "Content-Security-Policy",
+													"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+												},
+												{
+													"key": "Cross-Origin-Opener-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Cross-Origin-Resource-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Origin-Agent-Cluster",
+													"value": "?1"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "no-referrer"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-DNS-Prefetch-Control",
+													"value": "off"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "244"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"f4-oq/H5X/iFJJmvksYBbVboI+LDyU\""
+												},
+												{
+													"key": "Vary",
+													"value": "Accept-Encoding"
+												},
+												{
+													"key": "Date",
+													"value": "Sun, 26 Oct 2025 18:14:42 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 201,\n    \"message\": \"Subcategory Created\",\n    \"data\": {\n        \"attributes\": {\n            \"name\": \"youtube\",\n            \"categoryId\": \"68fe64cb1b85a47a2afa0577\",\n            \"_id\": \"68fe651223d1037abcc25b35\",\n            \"createdAt\": \"2025-10-26T18:14:42.754Z\",\n            \"updatedAt\": \"2025-10-26T18:14:42.754Z\",\n            \"__v\": 0\n        }\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "getSubcategory",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": ""
+										}
+									},
+									"response": [
+										{
+											"name": "success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/subCategory/subCategory",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"subCategory",
+														"subCategory"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "Text",
+											"header": [
+												{
+													"key": "Content-Security-Policy",
+													"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+												},
+												{
+													"key": "Cross-Origin-Opener-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Cross-Origin-Resource-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Origin-Agent-Cluster",
+													"value": "?1"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "no-referrer"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-DNS-Prefetch-Control",
+													"value": "off"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "424"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"1a8-8C3EZahxPEusr8+NEPE4qaoGcqk\""
+												},
+												{
+													"key": "Vary",
+													"value": "Accept-Encoding"
+												},
+												{
+													"key": "Date",
+													"value": "Wed, 29 Oct 2025 12:00:38 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 201,\n    \"message\": \"Subcategory Created\",\n    \"data\": {\n        \"attributes\": [\n            {\n                \"_id\": \"68ff55e7b288385c5898c899\",\n                \"name\": \"youtube\",\n                \"categoryId\": \"68ff552cb288385c5898c895\",\n                \"createdAt\": \"2025-10-27T11:22:15.560Z\",\n                \"updatedAt\": \"2025-10-27T11:22:15.560Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"6901fe7149213e006275a4c8\",\n                \"name\": \"youtube\",\n                \"categoryId\": \"6901fe1c49213e006275a4c2\",\n                \"createdAt\": \"2025-10-29T11:45:53.630Z\",\n                \"updatedAt\": \"2025-10-29T11:45:53.630Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "updateSubCategory",
+									"request": {
+										"method": "PUT",
+										"header": []
+									},
+									"response": [
+										{
+											"name": "success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"name\":\"youtubeeeeee\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/subCategory/subCategory/6903b9be7f203ee89d451377",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"subCategory",
+														"subCategory",
+														"6903b9be7f203ee89d451377"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": null,
+											"header": [
+												{
+													"key": "Content-Security-Policy",
+													"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+												},
+												{
+													"key": "Cross-Origin-Opener-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Cross-Origin-Resource-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Origin-Agent-Cluster",
+													"value": "?1"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "no-referrer"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-DNS-Prefetch-Control",
+													"value": "off"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "262"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"106-QmKOgGyzW1nno60e7qEux1QtEfY\""
+												},
+												{
+													"key": "Vary",
+													"value": "Accept-Encoding"
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 03 Nov 2025 11:01:06 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 200,\n    \"message\": \"Subcategory Updated Successfully\",\n    \"data\": {\n        \"attributes\": {\n            \"_id\": \"6903b9be7f203ee89d451377\",\n            \"name\": \"youtubeeeeee\",\n            \"categoryId\": \"69038a67fc34a563dc613bf7\",\n            \"createdAt\": \"2025-10-30T19:17:18.104Z\",\n            \"updatedAt\": \"2025-11-03T11:01:06.463Z\",\n            \"__v\": 0\n        }\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "deleteService",
+									"request": {
+										"method": "DELETE",
+										"header": []
+									},
+									"response": [
+										{
+											"name": "success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/subCategory/subCategory/69038adefc34a563dc613c05",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"subCategory",
+														"subCategory",
+														"69038adefc34a563dc613c05"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": null,
+											"header": [
+												{
+													"key": "Content-Security-Policy",
+													"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+												},
+												{
+													"key": "Cross-Origin-Opener-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Cross-Origin-Resource-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Origin-Agent-Cluster",
+													"value": "?1"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "no-referrer"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-DNS-Prefetch-Control",
+													"value": "off"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "67"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"43-4IeK4BgR8J5HTTur4eJ9SPhBFn0\""
+												},
+												{
+													"key": "Vary",
+													"value": "Accept-Encoding"
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 03 Nov 2025 11:02:26 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 200,\n    \"message\": \"Subcategory Deleted Successfully\",\n    \"data\": {}\n}"
 										}
 									]
 								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": null,
-							"header": [
+							]
+						},
+						{
+							"name": "category",
+							"item": [
 								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+									"name": "category",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\":\"buisness\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/category/category",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"category",
+												"category"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"name\": \"video\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/category/category",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"category",
+														"category"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "Text",
+											"header": [
+												{
+													"key": "Content-Security-Policy",
+													"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+												},
+												{
+													"key": "Cross-Origin-Opener-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Cross-Origin-Resource-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Origin-Agent-Cluster",
+													"value": "?1"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "no-referrer"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-DNS-Prefetch-Control",
+													"value": "off"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "199"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"c7-7dRrhh94WUZ3kD+IZD4zPqrB8H8\""
+												},
+												{
+													"key": "Vary",
+													"value": "Accept-Encoding"
+												},
+												{
+													"key": "Date",
+													"value": "Sun, 26 Oct 2025 18:13:32 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 201,\n    \"message\": \"category Created\",\n    \"data\": {\n        \"attributes\": {\n            \"name\": \"video\",\n            \"_id\": \"68fe64cb1b85a47a2afa0577\",\n            \"createdAt\": \"2025-10-26T18:13:31.982Z\",\n            \"updatedAt\": \"2025-10-26T18:13:31.982Z\",\n            \"__v\": 0\n        }\n    }\n}"
+										},
+										{
+											"name": "success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"name\": \"video\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/category/category",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"category",
+														"category"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "Text",
+											"header": [
+												{
+													"key": "Content-Security-Policy",
+													"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+												},
+												{
+													"key": "Cross-Origin-Opener-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Cross-Origin-Resource-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Origin-Agent-Cluster",
+													"value": "?1"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "no-referrer"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-DNS-Prefetch-Control",
+													"value": "off"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "199"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"c7-wsTOYldo25brAe7foq4eRs+xueI\""
+												},
+												{
+													"key": "Vary",
+													"value": "Accept-Encoding"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 28 Oct 2025 16:47:51 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 201,\n    \"message\": \"category Created\",\n    \"data\": {\n        \"attributes\": {\n            \"name\": \"video\",\n            \"_id\": \"6900f3b78b7083108d6e1fd7\",\n            \"createdAt\": \"2025-10-28T16:47:51.315Z\",\n            \"updatedAt\": \"2025-10-28T16:47:51.315Z\",\n            \"__v\": 0\n        }\n    }\n}"
+										}
+									]
 								},
 								{
-									"key": "Cross-Origin-Opener-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Cross-Origin-Resource-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Origin-Agent-Cluster",
-									"value": "?1"
-								},
-								{
-									"key": "Referrer-Policy",
-									"value": "no-referrer"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-DNS-Prefetch-Control",
-									"value": "off"
-								},
-								{
-									"key": "X-Download-Options",
-									"value": "noopen"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Permitted-Cross-Domain-Policies",
-									"value": "none"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "408"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"198-vt/sqreNPuKhM00XazO1c7gs6YY\""
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 30 Oct 2025 16:02:47 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"name": "getCategory",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": ""
+										}
+									},
+									"response": [
+										{
+											"name": "success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/category/category",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"category",
+														"category"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "Text",
+											"header": [
+												{
+													"key": "Content-Security-Policy",
+													"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+												},
+												{
+													"key": "Cross-Origin-Opener-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Cross-Origin-Resource-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Origin-Agent-Cluster",
+													"value": "?1"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "no-referrer"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-DNS-Prefetch-Control",
+													"value": "off"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "340"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"154-V0Yjf5UDTdIkCbYK0LxjEHkR8PM\""
+												},
+												{
+													"key": "Vary",
+													"value": "Accept-Encoding"
+												},
+												{
+													"key": "Date",
+													"value": "Wed, 29 Oct 2025 11:52:11 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 200,\n    \"message\": \"all category\",\n    \"data\": {\n        \"attributes\": [\n            {\n                \"_id\": \"68ff552cb288385c5898c895\",\n                \"name\": \"social media\",\n                \"createdAt\": \"2025-10-27T11:19:08.506Z\",\n                \"updatedAt\": \"2025-10-27T11:19:08.506Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"6901fe1c49213e006275a4c2\",\n                \"name\": \"video\",\n                \"createdAt\": \"2025-10-29T11:44:28.086Z\",\n                \"updatedAt\": \"2025-10-29T11:44:28.086Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+										}
+									]
 								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 200,\n    \"message\": \"All Users\",\n    \"data\": {\n        \"attributes\": [\n            {\n                \"firstName\": null,\n                \"lastName\": null,\n                \"fullName\": \"Testing User\",\n                \"email\": \"user@gmail.com\",\n                \"image\": \"/uploads/users/user.png\",\n                \"role\": \"client\",\n                \"callingCode\": null,\n                \"phoneNumber\": 1734456873,\n                \"nidNumber\": null,\n                \"isNIDVerified\": null,\n                \"dataOfBirth\": null,\n                \"address\": null,\n                \"isProfileCompleted\": false,\n                \"createdAt\": \"2025-10-30T15:04:26.542Z\",\n                \"id\": \"69037e7ab152c09da24ae151\"\n            }\n        ]\n    }\n}"
+							]
+						}
+					]
+				},
+				{
+					"name": "terms",
+					"item": [
+						{
+							"name": "createTerms",
+							"request": {
+								"method": "POST",
+								"header": []
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"content\":\"a word or phrase used to describe a thing or to express a concept, especially in a particular kind of language or branch of study.\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/terms/create",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"terms",
+												"create"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "329"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"149-pW5ORr5uf0UMbFhV8ca7bGtSuX0\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 13 Nov 2025 07:57:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 201,\n    \"message\": \"Terms created successfully\",\n    \"data\": {\n        \"attributes\": {\n            \"content\": \"a word or phrase used to describe a thing or to express a concept, especially in a particular kind of language or branch of study.\",\n            \"_id\": \"69158f4c6e6ec77b5619f1be\",\n            \"createdAt\": \"2025-11-13T07:57:00.481Z\",\n            \"updatedAt\": \"2025-11-13T07:57:00.481Z\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "updateTerms",
+							"request": {
+								"method": "PUT",
+								"header": []
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"content\":\"a word or phrase used to describe a thing or to express a concept, especially in a particular kind of language\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/terms/terms/69158f4c6e6ec77b5619f1be",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"terms",
+												"terms",
+												"69158f4c6e6ec77b5619f1be"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "309"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"135-Dh9eHxAXN90j/K63X6+1iX3UTH8\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 13 Nov 2025 08:08:36 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 200,\n    \"message\": \"Terms updated successfully\",\n    \"data\": {\n        \"attributes\": {\n            \"_id\": \"69158f4c6e6ec77b5619f1be\",\n            \"content\": \"a word or phrase used to describe a thing or to express a concept, especially in a particular kind of language\",\n            \"createdAt\": \"2025-11-13T07:57:00.481Z\",\n            \"updatedAt\": \"2025-11-13T08:08:36.341Z\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "allTerms",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/terms/allTerms",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"terms",
+												"allTerms"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "567"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"237-g1jKeQwPWnAT3ad2kJMhc5St5sE\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 13 Nov 2025 08:12:31 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 200,\n    \"message\": \"Terms fetched successfully\",\n    \"data\": {\n        \"attributes\": [\n            {\n                \"_id\": \"69159227ea9493fb368e1751\",\n                \"content\": \"a word or phrase used to describe a thing or to express a concept, especially in a particular kind of language or branch of study.\",\n                \"createdAt\": \"2025-11-13T08:09:11.506Z\",\n                \"updatedAt\": \"2025-11-13T08:09:11.506Z\"\n            },\n            {\n                \"_id\": \"69158f4c6e6ec77b5619f1be\",\n                \"content\": \"a word or phrase used to describe a thing or to express a concept, especially in a particular kind of language\",\n                \"createdAt\": \"2025-11-13T07:57:00.481Z\",\n                \"updatedAt\": \"2025-11-13T08:08:36.341Z\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "deleteTerms",
+							"request": {
+								"method": "DELETE",
+								"header": []
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/terms/terms/69158f4c6e6ec77b5619f1be",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"terms",
+												"terms",
+												"69158f4c6e6ec77b5619f1be"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "309"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"135-gl/C/PWP4P6ElLVLI6SEqNFYMf4\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 13 Nov 2025 08:14:02 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 200,\n    \"message\": \"Terms deleted successfully\",\n    \"data\": {\n        \"attributes\": {\n            \"_id\": \"69158f4c6e6ec77b5619f1be\",\n            \"content\": \"a word or phrase used to describe a thing or to express a concept, especially in a particular kind of language\",\n            \"createdAt\": \"2025-11-13T07:57:00.481Z\",\n            \"updatedAt\": \"2025-11-13T08:08:36.341Z\"\n        }\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "about",
+					"item": [
+						{
+							"name": "createabout",
+							"request": {
+								"method": "POST",
+								"header": []
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"content\":\"a word or phrase used to describe a thing or to express a concept, especially in a particular kind of language or branch of study.\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/about/create",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"about",
+												"create"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "332"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"14c-cKnUYrVKxEIeuAv1SeOY3gaZ7Rc\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 13 Nov 2025 08:45:33 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 201,\n    \"message\": \"About Us created successfully\",\n    \"data\": {\n        \"attributes\": {\n            \"content\": \"a word or phrase used to describe a thing or to express a concept, especially in a particular kind of language or branch of study.\",\n            \"_id\": \"69159aadf5204e986568116b\",\n            \"createdAt\": \"2025-11-13T08:45:33.862Z\",\n            \"updatedAt\": \"2025-11-13T08:45:33.862Z\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "updateAbout",
+							"request": {
+								"method": "PUT",
+								"header": []
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"content\":\"a word or phrase used to describe a thing or to express a concept, especially in a particular kind of \"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/about/69159aadf5204e986568116b",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"about",
+												"69159aadf5204e986568116b"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "304"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"130-LYteFvQIAauatDcfDth5aOxlCt8\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 13 Nov 2025 08:47:56 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 200,\n    \"message\": \"About Us updated successfully\",\n    \"data\": {\n        \"attributes\": {\n            \"_id\": \"69159aadf5204e986568116b\",\n            \"content\": \"a word or phrase used to describe a thing or to express a concept, especially in a particular kind of \",\n            \"createdAt\": \"2025-11-13T08:45:33.862Z\",\n            \"updatedAt\": \"2025-11-13T08:47:56.610Z\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "allAbout",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/about",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"about"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "306"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"132-6sAgslrvpizK1FBtos5kAaGRAlM\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 13 Nov 2025 08:49:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 200,\n    \"message\": \"About Us fetched successfully\",\n    \"data\": {\n        \"attributes\": [\n            {\n                \"_id\": \"69159aadf5204e986568116b\",\n                \"content\": \"a word or phrase used to describe a thing or to express a concept, especially in a particular kind of \",\n                \"createdAt\": \"2025-11-13T08:45:33.862Z\",\n                \"updatedAt\": \"2025-11-13T08:47:56.610Z\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "deleteAbout",
+							"request": {
+								"method": "DELETE",
+								"header": []
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/about/69159aadf5204e986568116b",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"about",
+												"69159aadf5204e986568116b"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "79"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"4f-5sh1EFSCLQuI5hwUy9WRIwd4MmQ\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 13 Nov 2025 08:50:33 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 200,\n    \"message\": \"About Us deleted successfully\",\n    \"data\": {\n        \"attributes\": []\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "adminState",
+					"item": [
+						{
+							"name": "allOrders",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/order/orders",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"order",
+												"orders"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"94e-knhkh+W482382CpexlTVgLHk8KI\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 03 Nov 2025 10:51:55 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 200,\n    \"message\": \"All orders fetched successfully\",\n    \"data\": {\n        \"attributes\": {\n            \"data\": [\n                {\n                    \"_id\": \"6904f4deab3dd39304c3c665\",\n                    \"userId\": \"69037e7ab152c09da24ae151\",\n                    \"serviceId\": \"6903b94a7f203ee89d451365\",\n                    \"orderName\": \"per like\",\n                    \"isDelete\": false,\n                    \"quantity\": 300,\n                    \"totalPrice\": 600,\n                    \"addLink\": \"https://www.youtube.com/example_profile\",\n                    \"addComment\": \"Please increase my followers gradually.\",\n                    \"createdAt\": \"2025-10-31T17:41:50.056Z\",\n                    \"updatedAt\": \"2025-10-31T17:41:50.056Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"6903baaf7f203ee89d4513a1\",\n                    \"userId\": \"69037e7ab152c09da24ae151\",\n                    \"serviceId\": \"6903b94a7f203ee89d451365\",\n                    \"orderName\": \"per like\",\n                    \"isDelete\": false,\n                    \"quantity\": 300,\n                    \"totalPrice\": 600,\n                    \"addLink\": \"https://www.youtube.com/example_profile\",\n                    \"addComment\": \"Please increase my followers gradually.\",\n                    \"createdAt\": \"2025-10-30T19:21:19.386Z\",\n                    \"updatedAt\": \"2025-10-30T19:21:19.386Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"6903ba957f203ee89d45139d\",\n                    \"userId\": \"69037e7ab152c09da24ae151\",\n                    \"serviceId\": \"6903b9d37f203ee89d451381\",\n                    \"orderName\": \"per like\",\n                    \"isDelete\": false,\n                    \"quantity\": 500,\n                    \"totalPrice\": 2000,\n                    \"addLink\": \"https://www.youtube.com/example_profile\",\n                    \"addComment\": \"Please increase my followers gradually.\",\n                    \"createdAt\": \"2025-10-30T19:20:53.813Z\",\n                    \"updatedAt\": \"2025-10-30T19:20:53.813Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"6903ba7f7f203ee89d451399\",\n                    \"userId\": \"69037e7ab152c09da24ae151\",\n                    \"serviceId\": \"6903b9db7f203ee89d451387\",\n                    \"orderName\": \"per comment\",\n                    \"isDelete\": false,\n                    \"quantity\": 0,\n                    \"totalPrice\": 3000,\n                    \"addLink\": \"https://www.youtube.com/example_profile\",\n                    \"addComment\": \"Please increase my followers gradually.\",\n                    \"createdAt\": \"2025-10-30T19:20:31.394Z\",\n                    \"updatedAt\": \"2025-10-30T19:20:31.394Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"6903b8fa7f203ee89d45134f\",\n                    \"userId\": \"69037e7ab152c09da24ae151\",\n                    \"serviceId\": \"69038b41fc34a563dc613c14\",\n                    \"orderName\": \"per comment\",\n                    \"isDelete\": false,\n                    \"quantity\": 500,\n                    \"totalPrice\": 1500,\n                    \"addLink\": \"https://www.facebook.com/example_profile\",\n                    \"addComment\": \"Please increase my followers gradually.\",\n                    \"createdAt\": \"2025-10-30T19:14:02.183Z\",\n                    \"updatedAt\": \"2025-10-30T19:14:02.183Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"690391fefc34a563dc613c34\",\n                    \"userId\": \"69037e7ab152c09da24ae151\",\n                    \"serviceId\": \"69038b2dfc34a563dc613c0f\",\n                    \"orderName\": \"per view\",\n                    \"quantity\": 10,\n                    \"totalPrice\": 10,\n                    \"addLink\": \"https://www.instagram.com/example_profile\",\n                    \"addComment\": \"Please increase my followers gradually.\",\n                    \"createdAt\": \"2025-10-30T16:27:42.806Z\",\n                    \"updatedAt\": \"2025-10-30T16:27:42.806Z\",\n                    \"__v\": 0\n                }\n            ],\n            \"page\": 1,\n            \"limit\": 10,\n            \"totalPages\": 1,\n            \"totalResults\": 6\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "AllUsers",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": [
+								{
+									"name": "allEmploysuccess",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/users/allUsers?role=employ",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users",
+												"allUsers"
+											],
+											"query": [
+												{
+													"key": "role",
+													"value": "employ"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "422"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1a6-jsONX9H6eTtFe9wgueKqx4NNShc\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 30 Oct 2025 16:02:03 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 200,\n    \"message\": \"All Users\",\n    \"data\": {\n        \"attributes\": [\n            {\n                \"firstName\": null,\n                \"lastName\": null,\n                \"fullName\": \"Testing Super Admin\",\n                \"email\": \"super.admin@gmail.com\",\n                \"image\": \"/uploads/users/user.png\",\n                \"role\": \"employ\",\n                \"callingCode\": null,\n                \"phoneNumber\": 1735566789,\n                \"nidNumber\": null,\n                \"isNIDVerified\": null,\n                \"dataOfBirth\": null,\n                \"address\": null,\n                \"isProfileCompleted\": false,\n                \"createdAt\": \"2025-10-30T15:04:26.539Z\",\n                \"id\": \"69037e7ab152c09da24ae14f\"\n            }\n        ]\n    }\n}"
+								},
+								{
+									"name": "AllClientSuccess",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/users/allUsers?role=client",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users",
+												"allUsers"
+											],
+											"query": [
+												{
+													"key": "role",
+													"value": "client"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "408"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"198-vt/sqreNPuKhM00XazO1c7gs6YY\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 30 Oct 2025 16:02:47 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 200,\n    \"message\": \"All Users\",\n    \"data\": {\n        \"attributes\": [\n            {\n                \"firstName\": null,\n                \"lastName\": null,\n                \"fullName\": \"Testing User\",\n                \"email\": \"user@gmail.com\",\n                \"image\": \"/uploads/users/user.png\",\n                \"role\": \"client\",\n                \"callingCode\": null,\n                \"phoneNumber\": 1734456873,\n                \"nidNumber\": null,\n                \"isNIDVerified\": null,\n                \"dataOfBirth\": null,\n                \"address\": null,\n                \"isProfileCompleted\": false,\n                \"createdAt\": \"2025-10-30T15:04:26.542Z\",\n                \"id\": \"69037e7ab152c09da24ae151\"\n            }\n        ]\n    }\n}"
+								},
+								{
+									"name": "currentMounthUserSuccess",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/users/allUsers?role=employ",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users",
+												"allUsers"
+											],
+											"query": [
+												{
+													"key": "role",
+													"value": "employ"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"624-YkYIZsMTGombvporlpRmMfpVYLI\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 13 Nov 2025 13:44:03 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 200,\n    \"message\": \"All Users with Monthly Summary\",\n    \"data\": {\n        \"attributes\": {\n            \"totalUsers\": 2,\n            \"totalThisMonth\": 2,\n            \"allUsers\": [\n                {\n                    \"firstName\": null,\n                    \"lastName\": null,\n                    \"fullName\": \"Testing Super Admin\",\n                    \"email\": \"employ@gmail.com\",\n                    \"image\": \"/uploads/users/user.png\",\n                    \"role\": \"employ\",\n                    \"callingCode\": null,\n                    \"phoneNumber\": 1735566789,\n                    \"nidNumber\": null,\n                    \"isNIDVerified\": null,\n                    \"dataOfBirth\": null,\n                    \"address\": null,\n                    \"isProfileCompleted\": false,\n                    \"createdAt\": \"2025-11-13T04:13:28.735Z\",\n                    \"id\": \"69155ae8be60674ab076b7ef\"\n                },\n                {\n                    \"firstName\": null,\n                    \"lastName\": null,\n                    \"fullName\": \"Testing User\",\n                    \"email\": \"employ2@gmail.com\",\n                    \"image\": \"/uploads/users/user.png\",\n                    \"role\": \"employ\",\n                    \"callingCode\": null,\n                    \"phoneNumber\": 1734456873,\n                    \"nidNumber\": null,\n                    \"isNIDVerified\": null,\n                    \"dataOfBirth\": null,\n                    \"address\": null,\n                    \"isProfileCompleted\": false,\n                    \"createdAt\": \"2025-11-13T04:13:28.736Z\",\n                    \"id\": \"69155ae8be60674ab076b7f3\"\n                }\n            ],\n            \"currentMonthUsers\": [\n                {\n                    \"firstName\": null,\n                    \"lastName\": null,\n                    \"fullName\": \"Testing Super Admin\",\n                    \"email\": \"employ@gmail.com\",\n                    \"image\": \"/uploads/users/user.png\",\n                    \"role\": \"employ\",\n                    \"callingCode\": null,\n                    \"phoneNumber\": 1735566789,\n                    \"nidNumber\": null,\n                    \"isNIDVerified\": null,\n                    \"dataOfBirth\": null,\n                    \"address\": null,\n                    \"isProfileCompleted\": false,\n                    \"createdAt\": \"2025-11-13T04:13:28.735Z\",\n                    \"id\": \"69155ae8be60674ab076b7ef\"\n                },\n                {\n                    \"firstName\": null,\n                    \"lastName\": null,\n                    \"fullName\": \"Testing User\",\n                    \"email\": \"employ2@gmail.com\",\n                    \"image\": \"/uploads/users/user.png\",\n                    \"role\": \"employ\",\n                    \"callingCode\": null,\n                    \"phoneNumber\": 1734456873,\n                    \"nidNumber\": null,\n                    \"isNIDVerified\": null,\n                    \"dataOfBirth\": null,\n                    \"address\": null,\n                    \"isProfileCompleted\": false,\n                    \"createdAt\": \"2025-11-13T04:13:28.736Z\",\n                    \"id\": \"69155ae8be60674ab076b7f3\"\n                }\n            ]\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "adminState",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/order/admin-state",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"order",
+												"admin-state"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "177"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"b1-v0ZIpVuACIUI2ULjkrXUBzcRmMk\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 13 Nov 2025 12:58:47 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"message\": \"Admin stats fetched successfully\",\n    \"data\": {\n        \"totalEarning\": 18,\n        \"totalOrders\": 3,\n        \"dailyEarnings\": [\n            {\n                \"_id\": \"2025-11-13\",\n                \"totalEarning\": 18,\n                \"totalOrders\": 3\n            }\n        ]\n    }\n}"
+								},
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/order/admin-state",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"order",
+												"admin-state"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "175"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"af-K6ssBR42mtAM+gNkRBON7GZdteY\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 13 Nov 2025 13:07:04 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"message\": \"Admin stats fetched successfully\",\n    \"data\": {\n        \"totalEarning\": 9,\n        \"totalOrders\": 3,\n        \"dailyEarnings\": [\n            {\n                \"_id\": \"2025-11-13\",\n                \"totalEarning\": 9,\n                \"totalOrders\": 3\n            }\n        ]\n    }\n}"
+								}
+							]
 						}
 					]
 				}
@@ -3450,7 +5367,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"quantity\": 5,\r\n  \"addLink\": \"https://www.instagram.com/example_profile\",\r\n  \"addComment\": \"Please increase my followers gradually.\"\r\n}\r\n",
+									"raw": "{\r\n    \"serviceId\":\"69155bc1838b7d43ce25de20\",\r\n  \"quantity\": 2,\r\n  \"addLink\": \"https://www.youtube.com/example_profile\",\r\n  \"addComment\": \"Please increase my followers gradually.\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3458,7 +5375,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/api/v1/order/order/6900f3e28b7083108d6e1fe1",
+									"raw": "{{url}}/api/v1/order/create",
 									"host": [
 										"{{url}}"
 									],
@@ -3466,14 +5383,13 @@
 										"api",
 										"v1",
 										"order",
-										"order",
-										"6900f3e28b7083108d6e1fe1"
+										"create"
 									]
 								}
 							},
 							"status": "Created",
 							"code": 201,
-							"_postman_previewlanguage": "Text",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "Content-Security-Policy",
@@ -3533,11 +5449,11 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "430"
+									"value": "460"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"1ae-S74p03DTKC8yFy9+QQ2RloX45tQ\""
+									"value": "W/\"1cc-x1Q36OAyjIubbAdWvz4Z9nM4sc0\""
 								},
 								{
 									"key": "Vary",
@@ -3545,7 +5461,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 28 Oct 2025 18:25:01 GMT"
+									"value": "Thu, 13 Nov 2025 04:21:40 GMT"
 								},
 								{
 									"key": "Connection",
@@ -3557,7 +5473,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"code\": 201,\n    \"message\": \"Order created successfully\",\n    \"data\": {\n        \"attributes\": {\n            \"userId\": \"6900e743a7000839eb2def08\",\n            \"serviceId\": \"6900f3e28b7083108d6e1fe1\",\n            \"orderName\": \"per like\",\n            \"quantity\": 5,\n            \"totalPrice\": 10,\n            \"addLink\": \"https://www.instagram.com/example_profile\",\n            \"addComment\": \"Please increase my followers gradually.\",\n            \"_id\": \"69010a7d2f43783ca3b13ebd\",\n            \"createdAt\": \"2025-10-28T18:25:01.127Z\",\n            \"updatedAt\": \"2025-10-28T18:25:01.127Z\",\n            \"__v\": 0\n        }\n    }\n}"
+							"body": "{\n    \"code\": 201,\n    \"message\": \"Order created successfully\",\n    \"data\": {\n        \"attributes\": {\n            \"clientId\": \"69155ae8be60674ab076b7f1\",\n            \"employId\": [],\n            \"serviceId\": \"69155bc1838b7d43ce25de20\",\n            \"orderName\": \"per like\",\n            \"isDelete\": false,\n            \"quantity\": 2,\n            \"totalPrice\": 8,\n            \"addLink\": \"https://www.youtube.com/example_profile\",\n            \"addComment\": \"Please increase my followers gradually.\",\n            \"_id\": \"69155cd4838b7d43ce25de41\",\n            \"createdAt\": \"2025-11-13T04:21:40.025Z\",\n            \"updatedAt\": \"2025-11-13T04:21:40.025Z\",\n            \"__v\": 0\n        }\n    }\n}"
 						}
 					]
 				},
@@ -4038,372 +5954,236 @@
 					]
 				},
 				{
-					"name": "taskVerify",
-					"request": {
-						"method": "POST",
-						"header": []
-					},
-					"response": [
-						{
-							"name": "success",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john@gmail.com\",\r\n  \"number\": \"01700000000\",\r\n  \"location\": \"Dhaka\"\r\n}\r\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/api/v1/task/task/6904f4deab3dd39304c3c665",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"task",
-										"task",
-										"6904f4deab3dd39304c3c665"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": null,
-							"header": [
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-								},
-								{
-									"key": "Cross-Origin-Opener-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Cross-Origin-Resource-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Origin-Agent-Cluster",
-									"value": "?1"
-								},
-								{
-									"key": "Referrer-Policy",
-									"value": "no-referrer"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-DNS-Prefetch-Control",
-									"value": "off"
-								},
-								{
-									"key": "X-Download-Options",
-									"value": "noopen"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Permitted-Cross-Domain-Policies",
-									"value": "none"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "494"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"1ee-lu13AgtzjdpuNO5rLUDqp/Eo35U\""
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 31 Oct 2025 17:47:22 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 200,\n    \"message\": \"Employ task verification submitted successfully\",\n    \"data\": {\n        \"attributes\": {\n            \"taskId\": \"6904f4deab3dd39304c3c665\",\n            \"userId\": \"69037e7ab152c09da24ae14f\",\n            \"verification\": {\n                \"name\": \"John Doe\",\n                \"email\": \"john@gmail.com\",\n                \"number\": \"01700000000\",\n                \"location\": \"Dhaka\"\n            },\n            \"proofImage\": null,\n            \"status\": \"verified\",\n            \"isVerified\": true,\n            \"isCompleted\": false,\n            \"isDelete\": false,\n            \"earning\": 1,\n            \"_id\": \"6904f62aa3889d4dbc7bc948\",\n            \"createdAt\": \"2025-10-31T17:47:22.074Z\",\n            \"updatedAt\": \"2025-10-31T17:47:22.074Z\",\n            \"__v\": 0\n        }\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "allVerifyTask",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": [
-						{
-							"name": "success",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{url}}/api/v1/task/task",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"task",
-										"task"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": null,
-							"header": [
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-								},
-								{
-									"key": "Cross-Origin-Opener-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Cross-Origin-Resource-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Origin-Agent-Cluster",
-									"value": "?1"
-								},
-								{
-									"key": "Referrer-Policy",
-									"value": "no-referrer"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-DNS-Prefetch-Control",
-									"value": "off"
-								},
-								{
-									"key": "X-Download-Options",
-									"value": "noopen"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Permitted-Cross-Domain-Policies",
-									"value": "none"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"9f7-/uK90DUxucgFgM+kcbAtl5Vfpb4\""
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 31 Oct 2025 18:16:42 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 200,\n    \"message\": \"All verified tasks fetched successfully\",\n    \"data\": {\n        \"attributes\": {\n            \"data\": [\n                {\n                    \"_id\": \"6904f917e9c8c4f5f380f93b\",\n                    \"taskId\": \"6904f4deab3dd39304c3c665\",\n                    \"userId\": \"69037e7ab152c09da24ae14f\",\n                    \"verification\": {\n                        \"name\": \"John Doe\",\n                        \"email\": \"john@gmail.com\",\n                        \"number\": \"01700000000\",\n                        \"location\": \"Dhaka\"\n                    },\n                    \"proofImage\": null,\n                    \"status\": \"verified\",\n                    \"isVerified\": true,\n                    \"isCompleted\": false,\n                    \"isDelete\": false,\n                    \"earning\": 1,\n                    \"createdAt\": \"2025-10-31T17:59:51.784Z\",\n                    \"updatedAt\": \"2025-10-31T17:59:51.784Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"6904f62aa3889d4dbc7bc948\",\n                    \"taskId\": \"6904f4deab3dd39304c3c665\",\n                    \"userId\": \"69037e7ab152c09da24ae14f\",\n                    \"verification\": {\n                        \"name\": \"John Doe\",\n                        \"email\": \"john@gmail.com\",\n                        \"number\": \"01700000000\",\n                        \"location\": \"Dhaka\"\n                    },\n                    \"proofImage\": null,\n                    \"status\": \"verified\",\n                    \"isVerified\": true,\n                    \"isCompleted\": false,\n                    \"isDelete\": false,\n                    \"earning\": 1,\n                    \"createdAt\": \"2025-10-31T17:47:22.074Z\",\n                    \"updatedAt\": \"2025-10-31T17:47:22.074Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"6904f603193dd765036e2f94\",\n                    \"taskId\": \"6904f4deab3dd39304c3c665\",\n                    \"userId\": \"69037e7ab152c09da24ae14f\",\n                    \"verification\": {\n                        \"name\": \"John Doe\",\n                        \"email\": \"john@gmail.com\",\n                        \"number\": \"01700000000\",\n                        \"location\": \"Dhaka\"\n                    },\n                    \"proofImage\": null,\n                    \"status\": \"verified\",\n                    \"isVerified\": true,\n                    \"isCompleted\": false,\n                    \"isDelete\": false,\n                    \"earning\": 0,\n                    \"createdAt\": \"2025-10-31T17:46:43.090Z\",\n                    \"updatedAt\": \"2025-10-31T17:46:43.090Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"6904f500ab3dd39304c3c670\",\n                    \"taskId\": \"6904f4deab3dd39304c3c665\",\n                    \"userId\": \"69037e7ab152c09da24ae14f\",\n                    \"verification\": {\n                        \"name\": \"John Doe\",\n                        \"email\": \"john@gmail.com\",\n                        \"number\": \"01700000000\",\n                        \"location\": \"Dhaka\"\n                    },\n                    \"proofImage\": null,\n                    \"status\": \"verified\",\n                    \"isVerified\": true,\n                    \"isCompleted\": false,\n                    \"isDelete\": false,\n                    \"earning\": 0,\n                    \"createdAt\": \"2025-10-31T17:42:24.260Z\",\n                    \"updatedAt\": \"2025-10-31T17:42:24.260Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"6904daf3a9aee31b02b9fb45\",\n                    \"taskId\": \"690391fefc34a563dc613c34\",\n                    \"userId\": \"69037e7ab152c09da24ae14f\",\n                    \"verification\": {\n                        \"name\": \"John Doe\",\n                        \"email\": \"john@gmail.com\",\n                        \"number\": \"01700000000\",\n                        \"location\": \"Dhaka\"\n                    },\n                    \"proofImage\": null,\n                    \"status\": \"verified\",\n                    \"isVerified\": true,\n                    \"isCompleted\": false,\n                    \"isDelete\": false,\n                    \"createdAt\": \"2025-10-31T15:51:15.474Z\",\n                    \"updatedAt\": \"2025-10-31T15:51:15.474Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"6904dae6a9aee31b02b9fb42\",\n                    \"taskId\": \"690391fefc34a563dc613c34\",\n                    \"userId\": \"69037e7ab152c09da24ae14f\",\n                    \"verification\": {\n                        \"name\": \"John Doe\",\n                        \"email\": \"john@gmail.com\",\n                        \"number\": \"01700000000\",\n                        \"location\": \"Dhaka\"\n                    },\n                    \"proofImage\": \"https://i.ibb.co/example.jpg\",\n                    \"status\": \"verified\",\n                    \"isVerified\": true,\n                    \"isCompleted\": false,\n                    \"isDelete\": false,\n                    \"createdAt\": \"2025-10-31T15:51:02.664Z\",\n                    \"updatedAt\": \"2025-10-31T15:51:02.664Z\",\n                    \"__v\": 0\n                }\n            ],\n            \"page\": 1,\n            \"limit\": 10,\n            \"totalPages\": 1,\n            \"totalResults\": 6\n        }\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "getSingleVerifiedTask",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": [
-						{
-							"name": "success",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{url}}/api/v1/task/task/6904f500ab3dd39304c3c670",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"task",
-										"task",
-										"6904f500ab3dd39304c3c670"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": null,
-							"header": [
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-								},
-								{
-									"key": "Cross-Origin-Opener-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Cross-Origin-Resource-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Origin-Agent-Cluster",
-									"value": "?1"
-								},
-								{
-									"key": "Referrer-Policy",
-									"value": "no-referrer"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-DNS-Prefetch-Control",
-									"value": "off"
-								},
-								{
-									"key": "X-Download-Options",
-									"value": "noopen"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Permitted-Cross-Domain-Policies",
-									"value": "none"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "481"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"1e1-psLku72o6tInSgfo/lF6ZIQeRoQ\""
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 31 Oct 2025 18:30:56 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 200,\n    \"message\": \"Verified task fetched successfully\",\n    \"data\": {\n        \"attributes\": {\n            \"verification\": {\n                \"name\": \"John Doe\",\n                \"email\": \"john@gmail.com\",\n                \"number\": \"01700000000\",\n                \"location\": \"Dhaka\"\n            },\n            \"_id\": \"6904f500ab3dd39304c3c670\",\n            \"taskId\": \"6904f4deab3dd39304c3c665\",\n            \"userId\": \"69037e7ab152c09da24ae14f\",\n            \"proofImage\": null,\n            \"status\": \"verified\",\n            \"isVerified\": true,\n            \"isCompleted\": false,\n            \"isDelete\": false,\n            \"earning\": 0,\n            \"createdAt\": \"2025-10-31T17:42:24.260Z\",\n            \"updatedAt\": \"2025-10-31T17:42:24.260Z\",\n            \"__v\": 0\n        }\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "taskUpdate",
+					"name": "clamiedOrders",
 					"request": {
 						"method": "PUT",
 						"header": []
 					},
-					"response": []
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/order/claimed/69155cd4838b7d43ce25de41",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"order",
+										"claimed",
+										"69155cd4838b7d43ce25de41"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "485"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e5-dk7tkxxVPVWgypebXQw6hvXoVks\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Nov 2025 06:05:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Task claimed successfully\",\n    \"data\": {\n        \"attributes\": {\n            \"_id\": \"69155cd4838b7d43ce25de41\",\n            \"clientId\": \"69155ae8be60674ab076b7f1\",\n            \"employId\": [\n                \"69155ae8be60674ab076b7f3\"\n            ],\n            \"serviceId\": \"69155bc1838b7d43ce25de20\",\n            \"orderName\": \"per like\",\n            \"isDelete\": false,\n            \"quantity\": 4,\n            \"totalPrice\": 8,\n            \"addLink\": \"https://www.youtube.com/example_profile\",\n            \"addComment\": \"Please increase my followers gradually.\",\n            \"createdAt\": \"2025-11-13T04:21:40.025Z\",\n            \"updatedAt\": \"2025-11-13T06:05:57.014Z\",\n            \"__v\": 0\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "myClaimedTAsk",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/order/claimed/my",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"order",
+										"claimed",
+										"my"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "957"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3bd-heWSDoVIUilxsqKMV78Dl1Cxx80\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Nov 2025 06:50:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Claimed tasks fetched successfully.\",\n    \"data\": {\n        \"attributes\": {\n            \"data\": [\n                {\n                    \"categoryName\": \"social\",\n                    \"subCategoryName\": \"instagram\",\n                    \"orderName\": \"per like\",\n                    \"quantity\": 1,\n                    \"addLink\": \"https://www.youtube.com/example_profile\",\n                    \"addComment\": \"Please increase my followers gradually.\",\n                    \"createdAt\": \"2025-11-13T06:38:15.832Z\",\n                    \"id\": \"69157cd71b1761d0f6d63cb9\"\n                },\n                {\n                    \"categoryName\": \"social\",\n                    \"subCategoryName\": \"instagram\",\n                    \"orderName\": \"per comment\",\n                    \"quantity\": 2,\n                    \"addLink\": \"https://www.youtube.com/example_profile\",\n                    \"addComment\": \"Please increase my followers gradually.\",\n                    \"createdAt\": \"2025-11-13T06:26:51.235Z\",\n                    \"id\": \"69157a2b93fa0b0532d6bdba\"\n                },\n                {\n                    \"categoryName\": \"social\",\n                    \"subCategoryName\": \"facebook\",\n                    \"orderName\": \"per like\",\n                    \"quantity\": 4,\n                    \"addLink\": \"https://www.youtube.com/example_profile\",\n                    \"addComment\": \"Please increase my followers gradually.\",\n                    \"createdAt\": \"2025-11-13T04:21:40.025Z\",\n                    \"id\": \"69155cd4838b7d43ce25de41\"\n                }\n            ],\n            \"page\": 1,\n            \"limit\": 10,\n            \"totalPages\": 1,\n            \"totalResults\": 3\n        }\n    }\n}"
+						}
+					]
 				}
 			]
 		}
