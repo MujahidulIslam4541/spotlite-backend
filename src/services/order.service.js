@@ -127,7 +127,50 @@ const claimedTask = async (id, userId) => {
 };
 
 
+// get my claimed task
+const getClaimedTasks = async (userId, options = {}) => {
+  const { limit = 10, page = 1 } = options;
+
+  const filter = { employId: userId };
+  const count = await Order.countDocuments(filter);
+  const totalPages = Math.ceil(count / limit);
+  const skip = (page - 1) * limit;
+
+  const orders = await Order.find(filter)
+    .populate({
+      path: "serviceId",
+      populate: { 
+        path: "subCategoryId", 
+        select: "name -_id", 
+        populate: { path: "categoryId", select: "name -_id" } 
+      },
+    })
+    .sort({ createdAt: -1 })
+    .skip(skip)
+    .limit(limit)
+    .lean();
+
+  const formattedOrders = orders.map(order => ({
+    categoryName: order.serviceId?.subCategoryId?.categoryId?.name,
+    subCategoryName: order.serviceId?.subCategoryId?.name,
+    orderName: order.orderName,
+    quantity: order.quantity,
+    addLink: order.addLink,
+    addComment: order.addComment,
+    createdAt: order.createdAt,
+    id: order._id,
+  }));
+
+  return {
+    data: formattedOrders,
+    page: parseInt(page),
+    limit: parseInt(limit),
+    totalPages,
+    totalResults: count,
+  };
+};
 
 
 
-module.exports = { orderService, getOrdersByUser, allOrders, Orders, ordersDetails ,claimedTask };
+
+module.exports = { orderService, getOrdersByUser, allOrders, Orders, ordersDetails ,claimedTask ,getClaimedTasks};

@@ -8,6 +8,7 @@ const {
   Orders,
   ordersDetails,
   claimedTask,
+  getClaimedTasks,
 } = require("../services/order.service");
 const { getServiceById } = require("../services/service.service");
 const { update } = require("lodash");
@@ -170,6 +171,33 @@ const claimedTaskController = catchAsync(async (req, res) => {
   );
 });
 
+// get my claimed task only
+const getClaimedTasksController = catchAsync(async (req, res) => {
+  const userId = req.user.id;
+  const { page, limit } = req.query;
+
+  const result = await getClaimedTasks(userId, { page, limit });
+
+  if (!result.data.length) {
+    return res.status(httpStatus.OK).json(
+      response({
+        message: "You haven't claimed any tasks yet.",
+        status: "OK",
+        statusCode: httpStatus.OK,
+        data: [],
+      })
+    );
+  }
+  res.status(httpStatus.OK).json(
+    response({
+      message: "Claimed tasks fetched successfully.",
+      status: "OK",
+      statusCode: httpStatus.OK,
+      data: result,
+    })
+  );
+});
+
 module.exports = {
   orderCreate,
   getMyOrders,
@@ -177,4 +205,5 @@ module.exports = {
   OrdersController,
   getOrderDetails,
   claimedTaskController,
+  getClaimedTasksController
 };
