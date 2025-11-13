@@ -49,7 +49,7 @@ const allOrders = async (filter = {}, options = {}) => {
 // orders for employs
 const Orders = async (filter = {}, options = {},userId) => {
   const { limit = 10, page = 1 } = options;
-  const queryFilter = { ...filter, quantity: { $gt: 0 },userId: {$nin: [userId]} };
+  const queryFilter = { ...filter, quantity: { $gt: 0 },employId: {$nin: [userId]} };
   console.log(queryFilter);
 
   const count = await Order.countDocuments(filter);
@@ -106,8 +106,21 @@ const ordersDetails = async (data) => {
   return orders;
 };
 
+// ✅ claimedTask by ID
+const claimedTask = async (id, userId) => {
+  const claimed = await Order.findByIdAndUpdate(
+    id,
+    { $addToSet: { employId: userId } }, 
+    {
+      new: true,
+      runValidators: true,
+    }
+  );
+  return claimed;
+};
 
 
 
 
-module.exports = { orderService, getOrdersByUser, allOrders, Orders, ordersDetails };
+
+module.exports = { orderService, getOrdersByUser, allOrders, Orders, ordersDetails ,claimedTask };

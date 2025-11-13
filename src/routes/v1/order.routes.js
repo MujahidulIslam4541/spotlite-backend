@@ -1,6 +1,6 @@
 const express = require("express");
 const auth = require("../../middlewares/auth");
-const { orderCreate, getMyOrders, allOrdersController, OrdersController, getOrderDetails } = require("../../controllers/order.Controller");
+const { orderCreate, getMyOrders, allOrdersController, OrdersController, getOrderDetails, claimedTaskController } = require("../../controllers/order.Controller");
 
 
 
@@ -10,4 +10,5 @@ router.route("/orders/me").get(auth('client'), getMyOrders);
 router.route("/orders").get(auth('admin'), allOrdersController);
 router.route("/orders/employ").get(auth('employ'), OrdersController);
 router.route("/order/:id").get(auth('employ'), getOrderDetails);
+router.route("/claimed/:id").put(auth('employ'), claimedTaskController);
 module.exports = router;

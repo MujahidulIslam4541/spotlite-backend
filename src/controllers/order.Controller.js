@@ -1,13 +1,19 @@
 const httpStatus = require("http-status");
 const catchAsync = require("../utils/catchAsync");
 const response = require("../config/response");
-const Service = require("../models/service.model");
-const { orderService, getOrdersByUser, allOrders, Orders, ordersDetails } = require("../services/order.service");
+const {
+  orderService,
+  getOrdersByUser,
+  allOrders,
+  Orders,
+  ordersDetails,
+  claimedTask,
+} = require("../services/order.service");
 const { getServiceById } = require("../services/service.service");
 
 // order only client
 const orderCreate = catchAsync(async (req, res) => {
-  const { quantity = 1, addLink, addComment,serviceId } = req.body;
+  const { quantity = 1, addLink, addComment, serviceId } = req.body;
   const clientId = req.user.id;
 
   if (req.user.role !== "client") {
@@ -70,7 +76,6 @@ const getMyOrders = catchAsync(async (req, res) => {
   );
 });
 
-
 // all orders only admin
 const allOrdersController = catchAsync(async (req, res) => {
   const { page, limit } = req.query;
@@ -98,7 +103,7 @@ const allOrdersController = catchAsync(async (req, res) => {
 //   orders only employ and her feed
 const OrdersController = catchAsync(async (req, res) => {
   const { page, limit } = req.query;
-  const userId =req.user.id;
+  const userId = req.user.id;
   if (req.user.role !== "employ") {
     return res.status(httpStatus.UNAUTHORIZED).json(
       response({
@@ -109,7 +114,7 @@ const OrdersController = catchAsync(async (req, res) => {
     );
   }
 
-  const result = await Orders( page, limit,userId );
+  const result = await Orders(page, limit, userId);
   res.status(httpStatus.OK).json(
     response({
       message: "All orders fetched successfully",
@@ -120,10 +125,9 @@ const OrdersController = catchAsync(async (req, res) => {
   );
 });
 
-// get order details 
+// get order details
 const getOrderDetails = catchAsync(async (req, res) => {
-const  {orderId}=req.params.id;
-
+  const { orderId } = req.params.id;
 
   const orders = await ordersDetails(orderId);
   res.status(httpStatus.OK).json(
@@ -136,4 +140,38 @@ const  {orderId}=req.params.id;
   );
 });
 
-module.exports = { orderCreate, getMyOrders, allOrdersController ,OrdersController,getOrderDetails};
+// claimed task
+const claimedTaskController = catchAsync(async (req, res) => {
+  const { id } = req.params;
+  const userId = req.user.id;
+
+  const updated = await claimedTask(id, userId);
+
+  if (!updated) {
+    return res.status(httpStatus.NOT_FOUND).json(
+      response({
+        message: "Service not found",
+        status: "FAIL",
+        statusCode: httpStatus.NOT_FOUND,
+      })
+    );
+  }
+
+  res.status(httpStatus.OK).json(
+    response({
+      message: "Task claimed successfully",
+      status: "OK",
+      statusCode: httpStatus.OK,
+      data: updated,
+    })
+  );
+});
+
+module.exports = {
+  orderCreate,
+  getMyOrders,
+  allOrdersController,
+  OrdersController,
+  getOrderDetails,
+  claimedTaskController,
+};
