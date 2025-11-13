@@ -9,6 +9,8 @@ const {
   ordersDetails,
   claimedTask,
   getClaimedTasks,
+  getTotalStats,
+  getDailyEarnings,
 } = require("../services/order.service");
 const { getServiceById } = require("../services/service.service");
 const { update } = require("lodash");
@@ -198,6 +200,25 @@ const getClaimedTasksController = catchAsync(async (req, res) => {
   );
 });
 
+
+//  Admin Stats Controller
+const getAdminStats = catchAsync(async (req, res) => {
+  const total = await getTotalStats();
+  const dailyEarnings = await getDailyEarnings();
+
+  const adminIncomeTotal=total.totalEarning*0.5
+
+  res.status(200).json({
+    success: true,
+    message: "Admin stats fetched successfully",
+    data: {
+      totalEarning: adminIncomeTotal,
+      totalOrders: total.totalOrders,
+      dailyEarnings,
+    },
+  });
+});
+
 module.exports = {
   orderCreate,
   getMyOrders,
@@ -205,5 +226,6 @@ module.exports = {
   OrdersController,
   getOrderDetails,
   claimedTaskController,
-  getClaimedTasksController
+  getClaimedTasksController,
+  getAdminStats
 };

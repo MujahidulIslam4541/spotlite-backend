@@ -13,11 +13,7 @@ const getOrdersByUser = async (userId, options = {}) => {
   const totalPages = Math.ceil(count / limit);
   const skip = (page - 1) * limit;
 
-  const orders = await Order.find(filter)
-    .sort({ createdAt: -1 })
-    .skip(skip)
-    .limit(limit)
-    .lean();
+  const orders = await Order.find(filter).sort({ createdAt: -1 }).skip(skip).limit(limit).lean();
 
   return {
     data: orders,
@@ -47,9 +43,9 @@ const allOrders = async (filter = {}, options = {}) => {
 };
 
 // orders for employs
-const Orders = async (filter = {}, options = {},userId) => {
+const Orders = async (filter = {}, options = {}, userId) => {
   const { limit = 10, page = 1 } = options;
-  const queryFilter = { ...filter, quantity: { $gt: 0 },employId: {$nin: [userId]} };
+  const queryFilter = { ...filter, quantity: { $gt: 0 }, employId: { $nin: [userId] } };
   console.log(queryFilter);
 
   const count = await Order.countDocuments(filter);
@@ -106,17 +102,17 @@ const ordersDetails = async (data) => {
   return orders;
 };
 
-// ✅ claimedTask by ID
+//  claimedTask by ID
 const claimedTask = async (id, userId) => {
   const claimed = await Order.findOneAndUpdate(
     {
       _id: id,
-      quantity: { $gt: 0 }, 
-      employId: { $ne: userId } 
+      quantity: { $gt: 0 },
+      employId: { $ne: userId },
     },
     {
       $addToSet: { employId: userId },
-      $inc: { quantity: -1 } 
+      $inc: { quantity: -1 },
     },
     {
       new: true,
@@ -125,7 +121,6 @@ const claimedTask = async (id, userId) => {
   );
   return claimed;
 };
-
 
 // get my claimed task
 const getClaimedTasks = async (userId, options = {}) => {
@@ -139,10 +134,10 @@ const getClaimedTasks = async (userId, options = {}) => {
   const orders = await Order.find(filter)
     .populate({
       path: "serviceId",
-      populate: { 
-        path: "subCategoryId", 
-        select: "name -_id", 
-        populate: { path: "categoryId", select: "name -_id" } 
+      populate: {
+        path: "subCategoryId",
+        select: "name -_id",
+        populate: { path: "categoryId", select: "name -_id" },
       },
     })
     .sort({ createdAt: -1 })
@@ -150,7 +145,7 @@ const getClaimedTasks = async (userId, options = {}) => {
     .limit(limit)
     .lean();
 
-  const formattedOrders = orders.map(order => ({
+  const formattedOrders = orders.map((order) => ({
     categoryName: order.serviceId?.subCategoryId?.categoryId?.name,
     subCategoryName: order.serviceId?.subCategoryId?.name,
     orderName: order.orderName,
@@ -170,7 +165,54 @@ const getClaimedTasks = async (userId, options = {}) => {
   };
 };
 
+//  Total Earnings & Orders
+const getTotalStats = async () => {
+  const result = await Order.aggregate([
+    { $match: { isDelete: false } },
+    {
+      $group: {
+        _id: null,
+        totalEarning: { $sum: "$totalPrice" },
+        totalOrders: { $sum: 1 },
+      },
+    },
+  ]);
 
+  return result[0] || { totalEarning: 0, totalOrders: 0 };
+};
 
+//  Daily Earnings
+const getDailyEarnings = async () => {
+  const result = await Order.aggregate([
+    { $match: { isDelete: false } },
+    {
+      $group: {
+        _id: {
+          $dateToString: { format: "%Y-%m-%d", date: "$createdAt" },
+        },
+        totalEarning: { $sum: "$totalPrice" },
+        totalOrders: { $sum: 1 },
+      },
+    },
+    { $sort: { _id: 1 } },
+  ]);
 
-module.exports = { orderService, getOrdersByUser, allOrders, Orders, ordersDetails ,claimedTask ,getClaimedTasks};
+  const dailyWithAdminIncome = result.map((day) => ({
+    ...day,
+    totalEarning: day.totalEarning * 0.5,
+  }));
+
+  return dailyWithAdminIncome;
+};
+
+module.exports = {
+  orderService,
+  getOrdersByUser,
+  allOrders,
+  Orders,
+  ordersDetails,
+  claimedTask,
+  getClaimedTasks,
+  getTotalStats,
+  getDailyEarnings,
+};
