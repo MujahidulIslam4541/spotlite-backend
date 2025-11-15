@@ -6184,6 +6184,133 @@
 							"body": "{\n    \"code\": 200,\n    \"message\": \"Claimed tasks fetched successfully.\",\n    \"data\": {\n        \"attributes\": {\n            \"data\": [\n                {\n                    \"categoryName\": \"social\",\n                    \"subCategoryName\": \"instagram\",\n                    \"orderName\": \"per like\",\n                    \"quantity\": 1,\n                    \"addLink\": \"https://www.youtube.com/example_profile\",\n                    \"addComment\": \"Please increase my followers gradually.\",\n                    \"createdAt\": \"2025-11-13T06:38:15.832Z\",\n                    \"id\": \"69157cd71b1761d0f6d63cb9\"\n                },\n                {\n                    \"categoryName\": \"social\",\n                    \"subCategoryName\": \"instagram\",\n                    \"orderName\": \"per comment\",\n                    \"quantity\": 2,\n                    \"addLink\": \"https://www.youtube.com/example_profile\",\n                    \"addComment\": \"Please increase my followers gradually.\",\n                    \"createdAt\": \"2025-11-13T06:26:51.235Z\",\n                    \"id\": \"69157a2b93fa0b0532d6bdba\"\n                },\n                {\n                    \"categoryName\": \"social\",\n                    \"subCategoryName\": \"facebook\",\n                    \"orderName\": \"per like\",\n                    \"quantity\": 4,\n                    \"addLink\": \"https://www.youtube.com/example_profile\",\n                    \"addComment\": \"Please increase my followers gradually.\",\n                    \"createdAt\": \"2025-11-13T04:21:40.025Z\",\n                    \"id\": \"69155cd4838b7d43ce25de41\"\n                }\n            ],\n            \"page\": 1,\n            \"limit\": 10,\n            \"totalPages\": 1,\n            \"totalResults\": 3\n        }\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "submitTask",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"image\":\"https://i.ibb.co.com/ymWMjy2W/image3.png\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/order//task/submit/69155cd4838b7d43ce25de41",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"order",
+										"",
+										"task",
+										"submit",
+										"69155cd4838b7d43ce25de41"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "726"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2d6-SyfeBrSMmTJb1FZ9dj5WJ33lT/w\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Nov 2025 11:41:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Task submitted successfully\",\n    \"data\": {\n        \"attributes\": {\n            \"_id\": \"69155cd4838b7d43ce25de41\",\n            \"clientId\": \"69155ae8be60674ab076b7f1\",\n            \"employId\": [\n                \"69155ae8be60674ab076b7f3\",\n                \"691579d94eda5c3507a650da\",\n                \"69155ae8be60674ab076b7ef\"\n            ],\n            \"serviceId\": \"69155bc1838b7d43ce25de20\",\n            \"orderName\": \"per like\",\n            \"isDelete\": false,\n            \"quantity\": 4,\n            \"totalPrice\": 8,\n            \"addLink\": \"https://www.youtube.com/example_profile\",\n            \"addComment\": \"Please increase my followers gradually.\",\n            \"createdAt\": \"2025-11-13T04:21:40.025Z\",\n            \"updatedAt\": \"2025-11-15T11:41:45.950Z\",\n            \"__v\": 1,\n            \"submittedImages\": [\n                {\n                    \"image\": \"https://i.ibb.co.com/ymWMjy2W/image3.png\",\n                    \"employId\": \"69155ae8be60674ab076b7ef\",\n                    \"_id\": \"691866f9dfe32dc763ee0290\",\n                    \"submittedAt\": \"2025-11-15T11:41:45.948Z\"\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
 				}
 			]
 		}
