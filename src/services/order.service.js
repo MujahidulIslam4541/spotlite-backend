@@ -122,6 +122,33 @@ const claimedTask = async (id, userId) => {
   return claimed;
 };
 
+const submitTask = async (orderId, userId, image) => {
+  const order = await Order.findById(orderId);
+
+  if (!order) return null;
+
+  const alreadySubmitted = order.submittedImages.some(
+    (item) => item.employId.toString() === userId.toString()
+  );
+
+  if (alreadySubmitted) {
+    return "ALREADY_SUBMITTED";
+  }
+
+  order.submittedImages.push({
+    image: image || null,
+    employId: userId,
+  });
+
+  await order.save();
+
+  return order;
+};
+
+
+
+
+
 // get my claimed task
 const getClaimedTasks = async (userId, options = {}) => {
   const { limit = 10, page = 1 } = options;
@@ -215,4 +242,5 @@ module.exports = {
   getClaimedTasks,
   getTotalStats,
   getDailyEarnings,
+  submitTask
 };

@@ -8,7 +8,7 @@ const orderSchema = new mongoose.Schema(
       required: true,
     },
     employId: {
-      type:[mongoose.Schema.Types.ObjectId],
+      type: [mongoose.Schema.Types.ObjectId],
       ref: "User",
       required: false,
     },
@@ -24,9 +24,8 @@ const orderSchema = new mongoose.Schema(
     },
     isDelete: {
       type: Boolean,
-      default:false
+      default: false,
     },
-
     quantity: {
       type: Number,
       default: 1,
@@ -45,6 +44,16 @@ const orderSchema = new mongoose.Schema(
       required: true,
       trim: true,
       maxLength: [200, "Comment can't exceed 200 characters"],
+    },
+    submittedImages: {
+      type: [
+        {
+          image: String, // base64 or image url
+          employId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+          submittedAt: { type: Date, default: Date.now },
+        },
+      ],
+      default: [],
     },
   },
   { timestamps: true }

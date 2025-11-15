@@ -11,6 +11,7 @@ const {
   getClaimedTasks,
   getTotalStats,
   getDailyEarnings,
+  submitTask,
 } = require("../services/order.service");
 const { getServiceById } = require("../services/service.service");
 const { update } = require("lodash");
@@ -160,9 +161,6 @@ const claimedTaskController = catchAsync(async (req, res) => {
     );
   }
 
-  // order.quantity = order.quantity - 1;
-  // await order.save();
-
   res.status(httpStatus.OK).json(
     response({
       message: "Task claimed successfully",
@@ -201,6 +199,43 @@ const getClaimedTasksController = catchAsync(async (req, res) => {
 });
 
 
+
+const submitTaskController = catchAsync(async (req, res) => {
+  const { id } = req.params;     
+  const userId = req.user.id;
+  const { image } = req.body;     
+
+  const result = await submitTask(id, userId, image);
+
+  if (result === "ALREADY_SUBMITTED") {
+    return res.status(httpStatus.BAD_REQUEST).json(
+      response({
+        message: "You already submitted this task",
+        status: "FAIL",
+        statusCode: httpStatus.BAD_REQUEST,
+      })
+    );
+  }
+  if (!result) {
+    return res.status(httpStatus.NOT_FOUND).json(
+      response({
+        message: "Order not found",
+        status: "FAIL",
+        statusCode: httpStatus.NOT_FOUND,
+      })
+    );
+  }
+  return res.status(httpStatus.OK).json(
+    response({
+      message: "Task submitted successfully",
+      status: "SUCCESS",
+      statusCode: httpStatus.OK,
+      data: result,
+    })
+  );
+});
+
+
 //  Admin Stats Controller
 const getAdminStats = catchAsync(async (req, res) => {
   const total = await getTotalStats();
@@ -227,5 +262,6 @@ module.exports = {
   getOrderDetails,
   claimedTaskController,
   getClaimedTasksController,
-  getAdminStats
+  getAdminStats,
+  submitTaskController
 };
